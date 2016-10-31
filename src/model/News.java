@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class News {
+	private int NewsID;
 	private String Title;
 	private Date PublishDate;
 	private Time time;
@@ -11,8 +12,14 @@ public class News {
 	private String Source;
 	private String Picture;
 	private int Weight;
-	private String Type;
+	private String Type;//politics,economic,military,sports,science 
 	
+	public int getNewsID() {
+		return NewsID;
+	}
+	public void setNewsID(int newsID) {
+		NewsID = newsID;
+	}
 	public String getTitle() {
 		return Title;
 	}

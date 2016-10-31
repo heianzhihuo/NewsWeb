@@ -13,7 +13,7 @@ public class Dao {
 
 	private static void createCon() {
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookdb", "root", "960331");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsdb", "root", "123456");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
