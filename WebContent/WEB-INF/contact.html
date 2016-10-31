@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>WP - Express</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />		
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/nivoslider.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+    <!--[if IE 7]><link rel="stylesheet" href="css/ie7.css" type="text/css" media="all" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all" />
+	<![endif]-->
+    <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico" />   
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.carouFredSel-5.6.2.js"></script>	
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="js/jquery.sticky.js"></script>
+	<script type="text/javascript" src="js/jquery-scroller-v1.min.js"></script>
+	<script type="text/javascript" src="js/kendo.web.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/ie7-fixed.js"></script>
+	<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class="sub-1sidebar">
+<header id="header">
+	<div id="header-top">
+		<div class="wrapper clearfix">
+			<div id="welcome">
+            	Welcome to wp-express!
+            </div><!--end:welcome-->
+            <nav id="top-nav">
+				<ul id="top-menu" class="clearfix">
+					<li class="current-menu-item"><a href="index.html">Home</a></li>
+					<li><a href="news.html">News</a>
+						<ul>
+							<li><a href="news.html">Sport</a></li>
+							<li><a href="#">Entertaiment</a></li>
+							<li><a href="#">Asia</a>
+								<ul>
+									<li><a href="#">Sport</a></li>
+									<li><a href="#">Entertaiment</a></li>
+									<li><a href="#">Asia</a></li>
+									<li><a href="#">Sport</a></li>
+									<li><a href="elements.html">Elements</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Sport</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</li>
+					<li><a href="news.html">Sport</a>
+						<ul>
+							<li><a href="#">Sport</a></li>
+							<li><a href="#">Entertaiment</a></li>
+							<li><a href="#">Asia</a></li>
+							<li><a href="#">Sport</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</li>
+					<li><a href="single.html">Single</a></li>
+                    <li><a href="elements.html">Elements</a></li>
+					<li>
+						<a href="news.html">Pages</a>
+						<ul>
+							<li><a href="single.html">Single</a></li>
+							<li><a href="404.html">404</a></li>							
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</li>
+                    <li><a href="#">Shortcodes</a></li>                    
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav><!--end:top-nav-->			
+		</div><!--wrapper-->	
+	</div><!--header-top-->
+	<div id="header-middle">
+		<div class="wrapper clearfix">
+			<div id="logo-image"><a href="index.html"><img src="placeholders/logo.png" alt="logo" /></a></div>
+		</div><!--wrapper-->
+	</div><!--header-middle-->
+	<div id="navigation">
+		<nav id="secondary-menu" class="wrapper clearfix">			
+			<ul class="clearfix" id="main-nav">
+				<li class="current-menu-item"><a href="index.html">Home</a></li>
+				<li><a href="news.html">News</a>
+					<ul>
+						<li><a href="news.html">Sport</a></li>
+						<li><a href="#">Entertaiment</a></li>
+						<li><a href="#">Asia</a>
+							<ul>
+								<li><a href="#">Sport</a></li>
+								<li><a href="#">Entertaiment</a></li>
+								<li><a href="#">Asia</a></li>
+								<li><a href="#">Sport</a></li>
+								<li><a href="elements.html">Elements</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Sport</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</li>
+				<li><a href="news.html">Sport</a>
+					<ul>
+						<li><a href="#">Sport</a></li>
+						<li><a href="#">Entertaiment</a></li>
+						<li><a href="#">Asia</a></li>
+						<li><a href="#">Sport</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</li>
+				<li><a href="single.html">Single</a></li>
+				<li><a href="elements.html">Elements</a></li>
+				<li>
+					<a href="news.html">Pages</a>
+					<ul>
+						<li><a href="single.html">Single</a></li>
+						<li><a href="404.html">404</a></li>							
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Shortcodes</a></li>                    
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="#">Sport</a></li>
+				<li><a href="#">Entertaiment</a></li>
+				<li><a href="#">Asia</a></li>
+				<li><a href="#">Samples</a></li>                   
+			</ul><!--end:main-nav-->
+		</nav><!--end:secondary-menu-->
+	</div><!--navigation-->
+	<div id="header-bottom">			
+		<div class="wrapper clearfix">
+        	<div class="breadcrumb clearfix">
+                <a href="#">Home</a>&nbsp;&raquo;&nbsp;<a href="#" class="current-page">Entertaiment</a> 
+            </div><!--end:breadcrumb-->
+			<div class="sub-search-box clearfix">
+				<form action="#" class="search-form" method="get" />
+					<input type="text" onblur="if(this.value=='')this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" name="s" class="search-text" />
+					<input type="submit" value="" name="submit" class="search-submit" />
+				</form><!-- search-form -->
+			</div><!--end:search-box-->	
+		</div><!--end:wrapper-->		
+	</div><!--header-bottom-->	
+</header>
+<div class="wrapper">
+	<div id="main-content">
+		<div class="primary">			
+			<section class="page-content">
+				<iframe class="google-map" src="http://maps.google.com/maps/ms?msa=0&amp;msid=202155445435279877773.0004bd5d16ad3a69014b6&amp;ie=UTF8&amp;t=m&amp;ll=21.031154,105.782976&amp;spn=0.016023,0.025663&amp;z=14&amp;output=embed"></iframe>
+				<br />
+				<h5>Get in touch with us today</h5>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				
+				<h3>Leave your message</h3>               
+				<form id="comments-form" class="clearfix" method="post" data-role="validator" novalidate="novalidate" />                
+					<div class="comment-right">
+						<p class="input-block">
+							<label class="required" for="comment-name">Name:</label><br />
+							<input type="text" validationmessage="Please enter your name" required="" class="k-textbox" id="comment-name" value="" name="name" />
+						</p>
+						<p class="input-block">
+							<label class="required" for="comment-email">Email:</label><br />
+							<input type="email" validationmessage="Please enter your email" required="" class="k-textbox" id="comment-email" value="" name="email" />
+						</p>
+						<p class="input-block">                                                
+							<label class="required" for="comment-url">Website:</label><br />
+							<input type="url" validationmessage="Please enter your website" required="" class="k-textbox" id="comment-url" value="" name="url" />                                                
+						</p>
+					</div>
+					<div class="comment-left">
+						<p class="textarea-block">                        
+							<label class="required" for="comment-message">Message:</label><br />
+							<textarea validationmessage="Please enter your message" required="" rows="6" cols="88" id="comment-message" name="message"></textarea>
+						</p>
+					</div>
+					<div class="clear"></div>
+					<p class="comment-button" />                    
+						<input type="submit" id="submit-comment" value="Submit" />
+						<p id="status-message">
+					</p>                        
+				</form>
+			</section>
+		</div><!--end:primary-->
+		<div class="secondary">
+			<div id="sidebar-b" class="sidebar">
+				<aside class="widget box-hover">
+					<header class="entry-header">
+						<h4 class="widget-title clearfix">Contact Information</h4>					
+					</header>
+					<div class="textwidget">
+						<ul>
+							<li>
+								<h5>1234 Ringroad Taxex, Indonesia, A123</h5>
+								<p class="free-phone">Free phone:<span>+800 123 456</span></p>
+								<p class="tele-phone">Telephone:<span>+800 123 456</span></p>
+								<p class="contact-fax">Fax: <span>+800 456 456</span></p>
+								<p class="contact-email">Email: <a href="mailto:contact@companyname.com">contact@companyname.com</a></p>
+							</li>
+							<li>
+								<h5>1234 Ringroad Taxex, Indonesia, A123</h5>
+								<p class="free-phone">Free phone:<span>+800 123 456</span></p>
+								<p class="tele-phone">Telephone:<span>+800 123 456</span></p>
+								<p class="contact-fax">Fax: <span>+800 456 456</span></p>
+								<p class="contact-email">Email: <a href="mailto:contact@companyname.com">contact@companyname.com</a></p>
+							</li>
+							<li>
+								<h5>1234 Ringroad Taxex, Indonesia, A123</h5>
+								<p class="free-phone">Free phone:<span>+800 123 456</span></p>
+								<p class="tele-phone">Telephone:<span>+800 123 456</span></p>
+								<p class="contact-fax">Fax: <span>+800 456 456</span></p>
+								<p class="contact-email">Email: <a href="mailto:contact@companyname.com">contact@companyname.com</a></p>
+							</li>
+							<li>
+								<h5>1234 Ringroad Taxex, Indonesia, A123</h5>
+								<p class="free-phone">Free phone:<span>+800 123 456</span></p>
+								<p class="tele-phone">Telephone:<span>+800 123 456</span></p>
+								<p class="contact-fax">Fax: <span>+800 456 456</span></p>
+								<p class="contact-email">Email: <a href="mailto:contact@companyname.com">contact@companyname.com</a></p>
+							</li> 
+						</ul>
+					</div>
+				</aside><!--end:widget-->				
+				<div class="clear"></div>
+			</div><!--end:sidebar-->
+			<div class="clear"></div>
+		</div><!--end:secondary-->
+		<div class="clear"></div>
+		<div id="footer-aside" class="box-hover">
+			<aside class="widget">
+				<div class="adv-footer">
+					<a class="banner-bottom-left" href="#"><img class="hover-effect responsive-img" src="placeholders/728x90-banner.jpg" alt="" /></a>
+					<a class="banner-bottom-right" href="#"><img class="hover-effect responsive-img ml-10" src="placeholders/220x90/sample-ad-3.jpg" alt="" /></a>
+				</div><!--end:adv-footer-->
+				<div class="clear"></div>
+			</aside>
+		</div><!--end:footer-aside-->	
+		<footer>
+			<div class="wrapper clearfix">
+				<p id="copyrights">Copyright © 2012 KopaTheme. All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>   <a id="scroll-to-top" href="#top">Back to top</a>
+			</div><!--end:wrapper-->
+		</footer>
+	</div><!--main-content-->
+</div><!--end:wrapper-->
+
+</body>
+</html>
