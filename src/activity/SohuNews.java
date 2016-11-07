@@ -67,6 +67,7 @@ public class SohuNews {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("请按回车键开始");
 		Scanner s = new Scanner(System.in);
 		String input = s.nextLine();
 		System.setProperty("http.proxyHost","socks.myhost.com");
