@@ -1,1 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.i18n.decoding" value="utf-8" />
+	<!-- 在包中导入struts自带的配置文件 -->
+	<include file="struts-default.xml" />
+	<!-- 配置自定义的action -->
+	<package name="action" extends="struts-default">
+	
+		<!-- 新增图书 -->
+		<action name="addBook" class="action.BookAction" method="addBook">
+			<!-- 根据不同的返回字符串类型跳转到不同的页面 -->
+			<result name="success">Success.html</result>
+			<result name="error">Error.html</result>
+		</action>
+
+		<!-- 删除图书 -->
+		<action name="deleteBook" class="action.BookAction" method="deleteBook">
+			<result name="success">Success.html</result>
+			<result name="error">Error.html</result>
+		</action>
+	
+		<!-- 显示所有图书 -->
+		<action name="showAll" class="action.BookAction" method="showAll">
+			<result>showAll.jsp</result>
+		</action>
+		
+		<!-- 修改图书 -->
+		<action name="reviseBook" class="action.BookAction" method="reviseBook">
+			<result name="revise">reviseBook.jsp</result>
+			<result name="success">Success.html</result>
+			<result name="error">Error.html</result>
+		</action>
+		
+		<!-- 搜索图书 -->
+		<action name="searchBook" class="action.BookAction" method="searchBook">
+			<result name="success">showBook.jsp</result>
+			<result name="error">Error.html</result>
+		</action>
+		
+		<!-- 展示图书 -->
+		<action name="showBook" class="action.BookAction" method="showBook">
+			<result name="success">showBook.jsp</result>
+			<result name="error">Error.html</result>
+		</action>
+		
+		<!-- 搜索作者 -->
+		<action name="searchAuthor" class="action.BookAction" method="searchAuthor">
+			<result name="success">showAuthor.jsp</result>
+			<result name="error">Error.html</result>
+		</action>
+	</package>
+</struts>
