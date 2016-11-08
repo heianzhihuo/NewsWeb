@@ -1,603 +1,816 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="utf-8" />
-	<title>WP - Express</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />		
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/nivoslider.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
-    <!--[if IE 7]><link rel="stylesheet" href="css/ie7.css" type="text/css" media="all" />
-	<![endif]-->
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all" />
-	<![endif]-->
-    <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico" />   
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
-    <script type="text/javascript" src="js/jquery.carouFredSel-5.6.2.js"></script>	
-    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="js/jquery.sticky.js"></script>
-	<script type="text/javascript" src="js/jquery-scroller-v1.min.js"></script>
-	<script type="text/javascript" src="js/kendo.web.min.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="js/ie7-fixed.js"></script>
-	<![endif]-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-<body class="home-page">
-<header id="header">
-	<div id="header-top">
-		<div class="wrapper clearfix">
-			<div id="welcome">
-            	Welcome to wp-express!
-            </div><!--end:welcome-->
-            <nav id="top-nav">
-				<ul id="top-menu" class="clearfix">
-					<li class="current-menu-item"><a href="index.html">Home</a></li>
-					<li><a href="news.html">News</a>
-						<ul>
-							<li><a href="news.html">Sport</a></li>
-							<li><a href="#">Entertaiment</a></li>
-							<li><a href="#">Asia</a>
-								<ul>
-									<li><a href="#">Sport</a></li>
-									<li><a href="#">Entertaiment</a></li>
-									<li><a href="#">Asia</a></li>
-									<li><a href="#">Sport</a></li>
-									<li><a href="elements.html">Elements</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Sport</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</li>
-					<li><a href="news.html">Sport</a>
-						<ul>
-							<li><a href="#">Sport</a></li>
-							<li><a href="#">Entertaiment</a></li>
-							<li><a href="#">Asia</a></li>
-							<li><a href="#">Sport</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</li>
-					<li><a href="single.html">Single</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-					<li>
-						<a href="news.html">Pages</a>
-						<ul>
-							<li><a href="single.html">Single</a></li>
-							<li><a href="404.html">404</a></li>							
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</li>
-                    <li><a href="#">Shortcodes</a></li>                    
-					<li><a href="contact.html">Contact</a></li>
+<title>首页</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Express News Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- web-fonts -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+		  $("#slider").responsiveSlides({
+			auto: true,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			pager: true,
+		  });
+		});
+	</script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+</head>
+<body>
+	<!-- header-section-starts-here -->
+	<div class="header-bottom">
+			<div class="logo text-center">
+				<a href="index.html"><img src="images/logo.jpg" alt="" /></a>
+			</div>
+			<div class="navigation">
+				<nav class="navbar navbar-default" role="navigation">
+		   <div class="wrap">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>
+			<!--/.navbar-header-->
+		
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					 <li class="active"><a href="index.html">首页</a></li>
+					<li><a href="sports.html">运动</a></li>
+					<li><a href="entertainment.html">娱乐</a>
+					<li><a href="fashion.html">时尚</a></li>
+					<li><a href="business.html">财经</a></li>
+					<li><a href="technology.html">科技</a></li>
+					<div class="clearfix"></div>
 				</ul>
-			</nav><!--end:top-nav-->			
-		</div><!--wrapper-->	
-	</div><!--header-top-->
-	<div id="header-middle">
-		<div class="wrapper clearfix">
-			<div id="logo-image"><a href="index.html"><img src="placeholders/logo.png" alt="logo" /></a></div>
-		</div><!--wrapper-->
-	</div><!--header-middle-->
-	<div id="navigation">
-		<nav id="secondary-menu" class="wrapper clearfix">			
-			<ul class="clearfix" id="main-nav">
-				<li class="current-menu-item"><a href="index.html">Home</a></li>
-					<li><a href="news.html">News</a>
-						<ul>
-							<li><a href="news.html">Sport</a></li>
-							<li><a href="#">Entertaiment</a></li>
-							<li><a href="#">Asia</a>
-								<ul>
-									<li><a href="#">Sport</a></li>
-									<li><a href="#">Entertaiment</a></li>
-									<li><a href="#">Asia</a></li>
-									<li><a href="#">Sport</a></li>
-									<li><a href="elements.html">Elements</a></li>
-								</ul>
+				<div class="search">
+					<!-- start search-->
+				    <div class="search-box">
+					    <div id="sb-search" class="sb-search">
+							<form>
+								<input class="sb-search-input" placeholder="" type="search" name="search" id="search">
+								<input class="sb-search-submit" type="submit" value="">
+								<span class="sb-icon-search"> </span>
+							</form>
+						</div>
+				    </div>
+					<!-- search-scripts -->
+					<script src="js/classie.js"></script>
+					<script src="js/uisearch.js"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+					<!-- //search-scripts -->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!--/.navbar-collapse-->
+	 <!--/.navbar-->
+			</div>
+		</nav>
+		</div>
+	</div>
+	<!-- header-section-ends-here -->
+	<div class="wrap">
+		<div class="move-text">
+			<div class="breaking_news">
+				<h2>头版头条</h2>
+			</div>
+			<div class="marquee">
+				<div class="marquee1"><a class="breaking" href="single.html">>>The standard chunk of Lorem Ipsum used since the 1500s is reproduced..</a></div>
+				<div class="marquee2"><a class="breaking" href="single.html">>>At vero eos et accusamus et iusto qui blanditiis praesentium voluptatum deleniti atque..</a></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+			<script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+			<script>
+			  $('.marquee').marquee({ pauseOnHover: true });
+			  //@ sourceURL=pen.js
+			</script>
+		</div>
+	</div>
+   <!--  <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div> -->
+	<!-- content-section-starts-here -->
+	<div class="main-body">
+		<div class="wrap">
+			<div class="col-md-8 content-left">
+				<div class="slider">
+					<div class="callbacks_wrap">
+						<ul class="rslides" id="slider">
+							<li>
+								<img src="images/3.jpg" alt="">
+								<div class="caption">
+									<a href="single.html">Lorem Ipsum is simply dummy text of the printing and typesetting industry</a>
+								</div>
 							</li>
-							<li><a href="#">Sport</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li>
+								<img src="images/2.jpg" alt="">
+								<div class="caption">
+									<a href="single.html">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</a>
+								</div>
+							</li>
+							<li>
+								<img src="images/1.jpg" alt="">
+								<div class="caption">
+									<a href="single.html">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</a>
+								</div>
+							</li>
 						</ul>
-					</li>
-					<li><a href="news.html">Sport</a>
-						<ul>
-							<li><a href="#">Sport</a></li>
-							<li><a href="#">Entertaiment</a></li>
-							<li><a href="#">Asia</a></li>
-							<li><a href="#">Sport</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</li>
-					<li><a href="single.html">Single</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-					<li>
-						<a href="news.html">Pages</a>
-						<ul>
-							<li><a href="single.html">Single</a></li>
-							<li><a href="404.html">404</a></li>							
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</li>
-                    <li><a href="#">Shortcodes</a></li>                    
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="#">Sport</a></li>
-					<li><a href="#">Entertaiment</a></li>
-					<li><a href="#">Asia</a></li>
-					<li><a href="#">Samples</a></li>
-			</ul><!--end:main-nav-->
-		</nav><!--end:secondary-menu-->
-	</div><!--navigation-->
-	<div id="header-bottom">			
-		<div class="wrapper clearfix">
-        	<div id="headline" class="clearfix">
-                <h6>Latest Headlines</h6>
-                <div class="horizontal_scroller">
-					<ul class="scrollingtext clearfix">
-						<li>August .12 .2012 - <a href="#">Syrian prime minister defects, fighting goes on</a></li>                    
-						<li>July .12 .2012 - <a href="#">Syrian prime minister defects, fighting goes on</a></li>
+					</div>
+				</div>
+				<div class="articles">
+					<header>
+						<h3 class="title-head">新闻最热</h3>
+					</header>
+					<div class="article">
+						<div class="article-left">
+							<a href="single.html"><img src="images/article1.jpg"></a>
+						</div>
+						<div class="article-right">
+							<div class="article-title">
+								<p>On Feb 25, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>104 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>52</a></p>
+								<a class="title" href="single.html"> The section of the mass media industry that focuses on presenting</a>
+							</div>
+							<div class="article-text">
+								<p>The standard chunk of Lorem Ipsum used since the 1500s. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" exact original.....</p>
+								<a href="single.html"><img src="images/more.png" alt="" /></a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="article">
+						<div class="article-left">
+							<iframe width="100%" src="images/article4.jpg" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="article-right">
+							<div class="article-title">
+								<p>On Apr 11, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>2 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>54 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>18</a></p>
+								<a class="title" href="single.html">Contrary to popular belief, Lorem Ipsum is not simply random</a>
+							</div>
+							<div class="article-text">
+								<p>It is a long established fact that a reader will be distracted by the readable.....</p>
+								<a href="single.html"><img src="images/more.png" alt="" /></a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="article">
+						<div class="article-left">
+							<a href="single.html"><img src="images/article3.jpg"></a>
+						</div>
+						<div class="article-right">
+							<div class="article-title">
+								<p>On Jun 21, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>181 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>89</a></p>
+								<a class="title" href="single.html">There are many variations that focuses on presenting</a>
+							</div>
+							<div class="article-text">
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.....</p>
+								<a href="single.html"><img src="images/more.png" alt="" /></a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="article">
+						<div class="article-left">
+							<a href="single.html"><img src="images/article4.jpg"></a>
+						</div>
+						<div class="article-right">
+							<div class="article-title">
+								<p>On Jan 17, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>1 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>144 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>74</a></p>
+								<a class="title" href="single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+							</div>
+							<div class="article-text">
+								<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.....</p>
+								<a href="single.html"><img src="images/more.png" alt="" /></a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="article">
+						<div class="article-left">
+							<iframe width="100%" src="images/tec4.jpg" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="article-right">
+							<div class="article-title">
+								<p>On Mar 14, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>250 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>68</a></p>
+								<a class="title" href="single.html">On the other hand, we denounce with righteous indignation</a>
+							</div>
+							<div class="article-text">
+								<p>It is a long established fact that a reader will be distracted by the readable.....</p>
+								<a href="single.html"><img src="images/more.png" alt="" /></a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="life-style">
+					<header>
+						<h3 class="title-head">生活娱乐</h3>
+					</header>
+					<div class="life-style-grids">
+						<div class="life-style-left-grid">
+							<a href="single.html"><img src="images/l1.jpg" alt="" /></a>
+							<a class="title" href="single.html">It is a long established fact that a reader will be distracted.</a>
+						</div>
+						<div class="life-style-right-grid">
+							<a href="single.html"><img src="images/l2.jpg" alt="" /></a>
+							<a class="title" href="single.html">There are many variations of passages of Lorem Ipsum available.</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="life-style-grids">
+						<div class="life-style-left-grid">
+							<a href="single.html"><img src="images/l3.jpg" alt="" /></a>
+							<a class="title" href="single.html">Contrary to popular belief, Lorem Ipsum is not simply random text.</a>
+						</div>
+						<div class="life-style-right-grid">
+							<a href="single.html"><img src="images/l4.jpg" alt="" /></a>
+							<a class="title" href="single.html">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+					<div class="sports-top">
+							<div class="s-grid-left">
+								<div class="cricket">
+									<header>
+										<h3 class="title-head">财经</h3>
+									</header>
+									<div class="c-sports-main">
+											<div class="c-image">
+												<a href="single.html"><img src="images/bus1.jpg" alt="" /></a>
+											</div>
+											<div class="c-text">
+												<h6>Lorem Ipsum</h6>
+												<a class="power" href="single.html">It is a long established fact that a reader</a>
+												<p class="date">On Feb 25, 2015</p>
+												<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="s-grid-small">
+											<div class="sc-image">
+												<a href="single.html"><img src="images/bus2.jpg" alt="" /></a>
+											</div>
+										<div class="sc-text">
+											<h6>Lorem Ipsum</h6>
+											<a class="power" href="single.html">It is a long established fact that a reader</a>
+											<p class="date">On Mar 21, 2015</p>
+											<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+										</div>
+										<div class="s-grid-small">
+											<div class="sc-image">
+												<a href="single.html"><img src="images/bus3.jpg" alt="" /></a>
+											</div>
+										<div class="sc-text">
+											<h6>Lorem Ipsum</h6>
+											<a class="power" href="single.html">It is a long established fact that a reader</a>
+											<p class="date">On Jan 25, 2015</p>
+											<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+										</div>
+										<div class="s-grid-small">
+											<div class="sc-image">
+												<a href="single.html"><img src="images/bus4.jpg" alt="" /></a>
+											</div>
+										<div class="sc-text">
+											<h6>Lorem Ipsum</h6>
+											<a class="power" href="single.html">It is a long established fact that a reader</a>
+											<p class="date">On Jul 19, 2015</p>
+											<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+							<div class="s-grid-right">
+								<div class="cricket">
+									<header>
+										<h3 class="title-popular">科技</h3>
+									</header>
+									<div class="c-sports-main">
+											<div class="c-image">
+												<a href="single.html"><img src="images/tec1.jpg" alt="" /></a>
+											</div>
+											<div class="c-text">
+												<h6>Lorem Ipsum</h6>
+												<a class="power" href="single.html">It is a long established fact that a reader</a>
+												<p class="date">On Apr 22, 2015</p>
+												<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="s-grid-small">
+											<div class="sc-image">
+												<a href="single.html"><img src="images/tec2.jpg" alt="" /></a>
+											</div>
+										<div class="sc-text">
+											<h6>Lorem Ipsum</h6>
+											<a class="power" href="single.html">It is a long established fact that a reader</a>
+											<p class="date">On Jan 19, 2015</p>
+											<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+										</div>
+										<div class="s-grid-small">
+											<div class="sc-image">
+												<a href="single.html"><img src="images/tec3.jpg" alt="" /></a>
+											</div>
+										<div class="sc-text">
+											<h6>Lorem Ipsum</h6>
+											<a class="power" href="single.html">It is a long established fact that a reader</a>
+											<p class="date">On Jun 25, 2015</p>
+											<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+										</div>
+										<div class="s-grid-small">
+											<div class="sc-image">
+												<a href="single.html"><img src="images/tec4.jpg" alt="" /></a>
+											</div>
+										<div class="sc-text">
+											<h6>Lorem Ipsum</h6>
+											<a class="power" href="single.html">It is a long established fact that a reader</a>
+											<p class="date">On Jul 19, 2015</p>
+											<a class="reu" href="single.html"><img src="images/more.png" alt="" /></a>
+												<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+				</div>
+			<div class="col-md-4 side-bar">
+			<div class="first_half">
+				<div class="newsletter">
+					<h1 class="side-title-head">新闻邮件</h1>
+					<p class="sign">登录，来收到我们的新闻邮件吧</p>
+					<form>
+						<input type="text" class="text" value="邮件地址" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email Address';}">
+						<input type="submit" value="提交">
+					</form>
+				</div>
+				<div class="list_vertical">
+		         	 	<section class="accordation_menu">
+						  <div>
+						    <input id="label-1" name="lida" type="radio" checked/>
+						   <label for="label-1" id="item1"><i class="ferme"> </i>订阅新闻<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+						    <div class="content" id="a1">
+						    	<div class="scrollbar" id="style-2">
+								 <div class="force-overflow">
+									<div class="popular-post-grids">
+										<div class="popular-post-grid">
+											<div class="post-img">
+												<a href="single.html"><img src="images/bus2.jpg" alt="" /></a>
+											</div>
+											<div class="post-text">
+												<a class="pp-title" href="single.html"> The section of the mass media industry</a>
+												<p>On Feb 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>3 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="popular-post-grid">
+											<div class="post-img">
+												<a href="single.html"><img src="images/bus1.jpg" alt="" /></a>
+											</div>
+											<div class="post-text">
+												<a class="pp-title" href="single.html"> Lorem Ipsum is simply dummy text printing</a>
+												<p>On Apr 14 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>2 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="popular-post-grid">
+											<div class="post-img">
+												<a href="single.html"><img src="images/bus3.jpg" alt="" /></a>
+											</div>
+											<div class="post-text">
+												<a class="pp-title" href="single.html">There are many variations of Lorem</a>
+												<p>On Jun 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="popular-post-grid">
+											<div class="post-img">
+												<a href="single.html"><img src="images/bus4.jpg" alt="" /></a>
+											</div>
+											<div class="post-text">
+												<a class="pp-title" href="single.html">Sed ut perspiciatis unde omnis iste natus</a>
+												<p>On Jan 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>1 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+									</div>
+                                </div>
+                              </div>
+						  </div>
+						  <div>
+						    <input id="label-2" name="lida" type="radio"/>
+						    <label for="label-2" id="item2"><i class="icon-leaf" id="i2"></i>热点新闻<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+						    <div class="content" id="a2">
+						       <div class="scrollbar" id="style-2">
+								   <div class="force-overflow">
+									<div class="popular-post-grids">
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec2.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html"> The section of the mass media industry</a>
+													<p>2016-12-03<a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>3 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec1.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html"> Lorem Ipsum is simply dummy text printing</a>
+													<p>2016-11-09<a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>2 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec3.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html">There are many variations of Lorem</a>
+													<p>2016-11-25<a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec4.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html">Sed ut perspiciatis unde omnis iste natus</a>
+													<p>2016-11-20<a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>1 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+						    </div>
+						  </div>
+						  <div>
+						    <input id="label-3" name="lida" type="radio"/>
+						    <label for="label-3" id="item3"><i class="icon-trophy" id="i3"></i>热评<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+						    <div class="content" id="a3">
+						       <div class="scrollbar" id="style-2">
+							    <div class="force-overflow">
+								 <div class="response">
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">扯不断的红尘</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>2016-12-08</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">冷月妖娆</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>2016-12-09</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>		
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">芒果奶昔</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>MAY 25, 2015</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>		
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">大傻兔</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>2016-12-09</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>		
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">匿名</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>2016-11-29</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>		
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">匿名</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>2016-11-28</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>		
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="media response-info">
+							<div class="media-left response-text-left">
+								<a href="#">
+									<img class="media-object" src="images/icon1.png" alt="" />
+								</a>
+								<h5><a href="#">宝贝狐</a></h5>
+							</div>
+							<div class="media-body response-text-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
+									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<ul>
+									<li>2016-12-03</li>
+									<li><a href="single.html">回复</a></li>
+								</ul>		
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					</div>
+
+                                </div>
+						    </div>
+						  </div>
+						</section>
+					 </div>
+					 <div class="side-bar-articles">
+						<div class="side-bar-article">
+							<a href="single.html"><img src="images/sai.jpg" alt="" /></a>
+							<div class="side-bar-article-title">
+								<a href="single.html">Contrary to popular belief, Lorem Ipsum is not simply random text</a>
+							</div>
+						</div>
+						<div class="side-bar-article">
+							<a href="single.html"><img src="images/sai2.jpg" alt="" /></a>
+							<div class="side-bar-article-title">
+								<a href="single.html">There are many variations of passages of Lorem</a>
+							</div>
+						</div>
+						<div class="side-bar-article">
+							<a href="single.html"><img src="images/sai3.jpg" alt="" /></a>
+							<div class="side-bar-article-title">
+								<a href="single.html">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</a>
+							</div>
+						</div>
+					 </div>
+					 </div>
+					 <div class="secound_half">
+					 <div class="tags">
+						<header>
+							<h3 class="title-head">热门标签</h3>
+						</header>
+						<p>
+						<a class="tag1" href="single.html">杨幂</a>
+						<a class="tag2" href="single.html">赵丽颖</a>
+						<a class="tag3" href="single.html">美国大选</a>
+						<a class="tag4" href="single.html">中俄核能</a>
+						<a class="tag5" href="single.html">习近平</a>
+						<a class="tag6" href="single.html">万圣节</a>
+						<a class="tag7" href="single.html">哈尔滨</a>
+						<a class="tag8" href="single.html">淘宝</a>
+						<a class="tag9" href="single.html">百度事故</a>
+						<a class="tag10" href="single.html">房价下跌</a>
+						<a class="tag11" href="single.html">股市</a>
+						<a class="tag12" href="single.html">许嵩</a>
+						<a class="tag13" href="single.html">java</a>
+						<a class="tag14" href="single.html">计算机</a>
+						<a class="tag15" href="single.html">金融</a>
+						<a class="tag16" href="single.html">大学排名</a>
+						<a class="tag17" href="single.html">央视春晚</a>
+						<a class="tag18" href="single.html">人机大战</a>
+						<a class="tag19" href="single.html">英语六级</a>
+						<a class="tag20" href="single.html">IT</a>
+						</p>
+					 </div>					 
+					 <div class="popular-news">
+						<header>
+							<h3 class="title-popular">头条新闻</h3>
+						</header>
+						<div class="popular-grids">
+							<div class="popular-grid">
+								<a href="single.html"><img src="images/popular-4.jpg" alt="" /></a>
+								<a class="title" href="single.html">It is a long established fact that a reader will be distracted</a>
+								<p>On Aug 31, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>250 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>68</a></p>
+							</div>
+							<div class="popular-grid">
+								<a href="single.html"><img src="images/popular-1.jpg" alt="" /></a>
+								<a class="title" href="single.html">It is a long established fact that a reader will be distracted</a>
+								<p>On Mar 14, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>250 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>68</a></p>
+							</div>
+							<div class="popular-grid">
+								<iframe width="100%" src="images/popular-3.jpg" frameborder="0" allowfullscreen></iframe>
+								<a class="title" href="single.html">Aishwarya Rai Bachchan's Latest SHOCKING News For Ex Salman Khan</a>
+								<p>On Mar 14, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>250 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>68</a></p>
+							</div>
+							<div class="popular-grid">
+								<a href="single.html"><img src="images/popular-3.jpg" alt="" /></a>
+								<a class="title" href="single.html">It is a long established fact that a reader will be distracted</a>
+								<p>On Mar 14, 2015 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>250 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-thumbs-up"></span>68</a></p>
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- content-section-ends-here -->
+	<!-- footer-section-starts-here -->
+	<div class="footer">
+		<div class="footer-top">
+			<div class="wrap">
+				<div class="col-md-3 col-xs-6 col-sm-4 footer-grid">
+					<h4 class="footer-head">关于我们</h4>
+					<p>1. 新闻由机器选取每5分钟自动更新</p>
+					<p>2. 新闻搜索源于互联网新闻网站和频道，系统自动分类排序</p>
+				</div>
+				<div class="col-md-2 col-xs-6 col-sm-2 footer-grid">
+					<h4 class="footer-head">类别</h4>
+					<ul class="cat">
+						<li><a href="business.html">财经</a></li>
+						<li><a href="technology.html">科技</a></li>
+						<li><a href="entertainment.html">娱乐</a></li>
+						<li><a href="sports.html">运动</a></li>
+						<li><a href="fashion.html">时尚</a></li>
 					</ul>
 				</div>
-            </div><!--end:headline-->
-			<div id="search-social" class="clearfix">				 
-				<ul class="social-links clearfix">
-					<li class="facebook-icon">
-						<a target="_blank" title="Facebook" class="facebook" href="#">
-							<img src="images/icons/facebook-icon.png" alt="" />
-						</a>
-					</li>
-					<li class="twitter-icon">
-						<a target="_blank" title="Twitter" class="twitter" href="#">
-							<img src="images/icons/twitter-icon.png" alt="" />                        
-						</a>
-					</li>
-				   <li class="rss-icon">
-						<a target="_blank" title="RSS" href="#">
-							<img src="images/icons/rss-icon.png" alt="" />                        
-						</a>
-					</li>
-					<li class="dribble-icon">
-						<a target="_blank" title="Dribble" class="dribble" href="#">
-							<img src="images/icons/dribble-icon.png" alt="" />                        
-						</a>
-					</li>               
-				</ul><!--end:social-links-->
-				<div class="search-box clearfix">
-					<form action="#" class="search-form" method="get" />
-						<input type="text" onBlur="if(this.value=='')this.value=this.defaultValue;" onFocus="if(this.value==this.defaultValue)this.value='';" value="Search" name="s" class="search-text" />
-						<input type="submit" value="" name="submit" class="search-submit" />
-					</form><!-- search-form -->
-				</div><!--end:search-box-->	
-			</div><!--search-social-->
-		</div><!--end:wrapper-->		
-	</div><!--header-bottom-->
-	<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
-</header>
-
-<div class="wrapper">
-	<div id="main-content">
-		<div class="primary">
-			<div class="slider-box-hover">	
-				<div class="slider-wrapper">
-					<div id="slider" class="nivoSlider">
-						<img src="placeholders/slider/slide-1.jpg" alt="" title="#slide-caption-1" />
-						<img src="placeholders/slider/slide-2.jpg" alt="" title="#slide-caption-2" />
-					</div>
-					<div id="slide-caption-1" class="nivo-html-caption">
-						<header>                    
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h1><a href="single.html">Welcome to the Dummy Text Generator!</a></h1>
-						</header>
-						<p>This handy tool helps you create dummy text for all your layout needs.We are gradually adding new functionality and we welcome your suggestions and feedback. Please feel free to send us any additional dummy texts.</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div>
-					<div id="slide-caption-2" class="nivo-html-caption">
-						<header>                    
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h1><a href="single.html">There are many vaiations of passages of Lorem</a></h1>
-						</header>
-						<p>NASA scientists hailed the Mars rover Curiosity's flawless descent and landing as a "miracle of engineering" as they scanned early images of an ancient crater that may hold clues about whether life took hold on the Red Plane</p>
-						<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-					</div>            
-				</div><!--end:slider-wrapper-->
-			</div><!--box-hover-->	
-			<section id="main-section">
-				<header class="entry-header">
-					<div class="header-inner">
-						<a href="#">Latest Articles</a>
-						<a href="#">Popular Articles</a>
-						<select>
-							<option selected="selected" value="" />All time
-							<option value="" />August
-							<option value="" />July
-							<option value="" />June
-							<option value="" />May
-						</select>
-					</div><!--header-inner-->
-				</header>
-				<div class="article-wrap">
-					<article class="entry-item box-hover clearfix">
-						<div class="video-thumb">
-							<img class="responsive-img" src="placeholders/244x117/244x117-1.jpg" alt="" />
-							<a class="play-icon" href="http://www.cssmoban.com/" rel="prettyPhoto">
-								<span class="black-overlay"></span>
-							</a>
-						</div><!--video-thumb-->
-						<div class="entry-content">
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry-content-->
-					</article><!--end:entry-item-->
-				</div><!--article-wrap-->
-				<div class="article-wrap">	
-					<article class="entry-item box-hover clearfix">
-						<a href="http://www.cssmoban.com/"><img class="hover-effect responsive-img" src="placeholders/244x117/244x117-2.jpg" alt="" /></a>
-						<div class="entry-content">
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry-content-->
-					</article><!--end:entry-item-->
-				</div><!--article-wrap-->
-				<div class="article-wrap">
-					<article class="entry-item box-hover clearfix">
-						<a href="#"><img class="hover-effect responsive-img" src="placeholders/244x117/244x117-3.jpg" alt="" /></a>
-						<div class="entry-content">
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry-content-->
-					</article><!--end:entry-item-->
-				</div><!--article-wrap-->
-				<div class="article-wrap">
-					<article class="entry-item box-hover clearfix">
-						<a href="#"><img class="hover-effect responsive-img" src="placeholders/244x117/244x117-4.jpg" alt="" /></a>
-						<div class="entry-content">
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry-content-->
-					</article><!--end:entry-item-->
-				</div><!--article-wrap-->
-				<div class="article-wrap">
-					<article class="entry-item box-hover clearfix">
-						<a href="#"><img class="hover-effect responsive-img" src="placeholders/244x117/244x117-5.jpg" alt="" /></a>
-						<div class="entry-content">
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry-content-->
-					</article><!--end:entry-item-->
-				</div><!--article-wrap-->
-				<div class="article-wrap">
-					<article class="entry-item box-hover clearfix">
-						<a href="#"><img class="hover-effect responsive-img" src="placeholders/244x117/244x117-6.jpg" alt="" /></a>
-						<div class="entry-content">
-							<span class="entry-category">in:&nbsp;</span>
-							<a class="entry-category" href="#">Fashion</a><span class="entry-date">&nbsp;&nbsp;|&nbsp;&nbsp;07.08.2012</span>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages of Lorem Ipsum avaibleThere are many vaiations of passages of Lorem Ipsum</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry-content-->
-					</article><!--end:entry-item-->
-				</div><!--article-wrap-->
-				<div class="pagination-wrap">
-					<ul class="pagination box-hover clearfix">
-						<li><a href="#" class="previous-page paging">Previous</a></li>
-						<li><a href="#" class="paging">1</a></li>
-						<li><a href="#" class="paging">2</a></li>
-						<li class="current"><a href="#" class="paging">3</a></li>
-						<li><a href="#" class="paging">4</a></li>
-						<li><a href="#" class="next-page paging">Next</a></li>
-					</ul><!--end:pagination-->
-				</div><!--pagination-wrap-->
-			</section>
-		</div><!--end:primary-->
-		<div class="secondary">
-			<div id="top-sidebar">
-				<section class="feature-widget">
-					<header>
-						<h6 class="feature-title">Featured News</h6>
-					</header>
-                    <div class="list-carousel responsive">
-                        <ul class="feature-news clearfix">
-                            <li>
-                                <article>
-                                    <div class="feature-item box-hover clearfix">
-                                        <div class="video-thumb">
-                                            <img class="responsive-img" src="placeholders/168x106/168x106-1.jpg" alt="" />
-                                            <a class="play-icon" href="http://www.cssmoban.com/" rel="prettyPhoto">
-                                                <span class="black-overlay"></span>
-                                            </a>
-                                        </div><!--video-thumb-->
-                                        <div class="entry-content">
-                                            <span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-                                            <h4 class="entry-title"><a href="#">Story behind opening ceremony symbols</a></h4>
-                                            <p>There are many vaiations of passages lorem Ipsum avaible</p>
-                                        </div><!--end:entry_content-->
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article>
-                                    <div class="feature-item clearfix">
-                                        <a href="#"><img class="hover-effect responsive-img" alt="" src="placeholders/168x106/168x106-2.jpg" /></a>
-                                        <div class="entry-content">
-                                            <span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-                                            <h4 class="entry-title"><a href="#">Story behind opening ceremony symbols</a></h4>
-                                            <p>There are many vaiations of passages lorem Ipsum avaible</p>
-                                        </div><!--end:entry_content-->
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article>
-                                    <div class="feature-item clearfix">
-                                        <a href="#"><img class="hover-effect responsive-img" alt="" src="placeholders/168x106/168x106-3.jpg" /></a>
-                                        <div class="entry-content">
-                                            <span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-                                            <h4 class="entry-title"><a href="#">Story behind opening ceremony symbols</a></h4>
-                                            <p>There are many vaiations of passages lorem Ipsum avaible</p>
-                                        </div><!--end:entry_content-->
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article>
-                                    <div class="feature-item box-hover clearfix">
-                                        <div class="video-thumb">
-                                            <img class="responsive-img" src="placeholders/168x106/168x106-1.jpg" alt="" />
-                                            <a class="play-icon" href="http://www.cssmoban.com/" rel="prettyPhoto">
-                                                <span class="black-overlay"></span>
-                                            </a>
-                                        </div><!--video-thumb-->
-                                        <div class="entry-content">
-                                            <span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-                                            <h4 class="entry-title"><a href="#">Story behind opening ceremony symbols</a></h4>
-                                            <p>There are many vaiations of passages lorem Ipsum avaible</p>
-                                        </div><!--end:entry_content-->
-                                    </div>
-                                </article>
-                            </li>               
-                        </ul><!--end:feature-news-->
-                        <div class="clear"></div>
-                        <div class="feature-nav">
-                            <a id="prev-1" class="prev" href="#">&nbsp;</a>
-                            <a id="next-1" class="next" href="#">&nbsp;</a>
-                        </div><!--feature-nav-->
-                    </div><!--end:list-carousel--> 
-				</section><!--end:feature-widget-->
-			</div><!--top-sidebar-->
-			<div class="sidebar" id="sidebar-a">
-				<aside class="widget box-hover">
-					<header class="entry-header">
-						<h4 class="widget-title clearfix"><span>Latest from life style</span></h4>					
-					</header>
-					<article class="entry-box clearfix">
-						<img class="hover-effect responsive-img" src="placeholders/244x117/244x117-7.jpg" alt="" />
-						<div class="entry-content">
-							<span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages lorem Ipsum avaible There are many vaiations of passages lorem Ipsum avaible</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry_content-->
-					</article><!--end:entry-box-->
-					<ul class="older-posts">
-						<li><a href="#">Horse Racing Getting Closer</a></li>
-						<li><a href="#">Becomming Official Olympic</a></li>
-					</ul><!--end:older-posts-->
-				</aside><!--end:widget-->
-				<aside class="widget box-hover">
-					<header class="entry-header">
-						<h4 class="widget-title clearfix"><span>Latest from life style</span></h4>					
-					</header>
-					<article class="entry-box clearfix">
-						<div class="video-thumb">
-							<img class="responsive-img" src="placeholders/244x117/244x117-8.jpg" alt="" />
-							<a class="play-icon" href="http://www.cssmoban.com/" rel="prettyPhoto">
-								<span class="black-overlay"></span>
-							</a>
-						</div><!--video-thumb-->
-						<div class="entry-content">
-							<span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages lorem Ipsum avaible There are many vaiations of passages lorem Ipsum avaible</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry_content-->
-					</article><!--end:entry-box-->
-					<ul class="older-posts">
-						<li><a href="#">Horse Racing Getting Closer</a></li>
-						<li><a href="#">Becomming Official Olympic</a></li>
-						<li><a href="#">Horse Racing Getting Closer</a></li>
-					</ul><!--end:older-posts-->
-				</aside><!--end:widget-->
-				<aside class="widget box-hover">
-					<div class="acc-wrapper">
-						<div class="accordion-title">
-							<h6><a href="#">Latest Articles</a></h6>
-						</div>
-						<div class="accordion-container">
-							<ul>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer</a>
-									</article>
-								</li>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Becomming Official Olympic</a>
-									</article>
-								</li>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a>
-									</article>
-								</li>
-							</ul>
-						</div>
-						<div class="accordion-title">
-						  <h6><a href="#">Popular Articles</a></h6>
-						</div>
-						<div class="accordion-container">
-							<ul>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer</a>
-									</article>
-								</li>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Becomming Official Olympic</a>
-									</article>
-								</li>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a>
-									</article>
-								</li>
-							</ul>
-						</div>
-						<div class="accordion-title">
-						  <h6><a href="#">Random Comments</a></h6>
-						</div>
-						<div class="accordion-container">
-							<ul>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a>
-									</article>
-								</li>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a>
-									</article>
-								</li>
-								<li>
-									<article class="clearfix">
-										<img class="hover-effect responsive-img" src="placeholders/62x46/62x46-1.jpg" alt="" />
-										<a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a>
-									</article>
-								</li>
-							</ul>
-						</div>
-					</div><!--end:acc-wrapper-->
-				</aside><!--end:widget--> 
-				<div class="clear"></div>
-			</div><!--end:sidebar-->
-			<div id="sidebar-b" class="sidebar">
-				<aside class="widget box-hover">
-					<header class="entry-header">
-						<h4 class="widget-title clearfix"><span>Latest from life style</span></h4>					
-					</header>
-					<article class="entry-box clearfix">
-						<img class="hover-effect responsive-img" src="placeholders/244x117/244x117-1.jpg" alt="" />
-						<div class="entry-content">
-							<span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages lorem Ipsum avaible There are many vaiations of passages lorem Ipsum avaible</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry_content-->
-					</article><!--end:entry-box-->
-					<ul class="older-posts">
-						<li><a href="#">Horse Racing Getting Closer</a></li>
-						<li><a href="#">Becomming Official Olympic</a></li>
-						<li><a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a></li>
-					</ul><!--end:older-posts-->
-				</aside><!--end:widget-->
-				<aside class="widget box-hover">
-					<header class="entry-header">
-						<h4 class="widget-title">Newsletter</h4>
-					</header>
-					<div class="newsletter">
-						<div class="wpcf7">
-							<form class="wpcf7-form" method="post" action="#" />
-								<p>Enter your email address below to receive updates each time we publish new content</p>
-								<p>
-									<span class="wpcf7-form-control-wrap your-email"><input type="text" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" value="" name="your-email" /></span>
-									<input type="submit" class="wpcf7-form-control  wpcf7-submit" value="Submit" />
-								</p>
-							</form>
-						</div>	
-					</div>
-				</aside><!--end:widget-->
-				<aside class="widget box-hover">
-					<div class="adv-125-125 clearfix">
-						<a href="#"><img class="hover-effect responsive-img" alt="" src="placeholders/125x125/sample-ad-1.jpg" /></a>
-						<a href="#"><img class="hover-effect responsive-img" alt="" src="placeholders/125x125/sample-ad-1.jpg" /></a>
-						<a href="#"><img class="hover-effect responsive-img" alt="" src="placeholders/125x125/sample-ad-1.jpg" /></a>
-						<a href="#"><img class="hover-effect responsive-img" alt="" src="placeholders/125x125/sample-ad-1.jpg" /></a>
-					</div>
-				</aside><!--end:widget-->  
-				<aside class="widget box-hover">
-					<header class="entry-header">
-						<h4 class="widget-title clearfix"><span>Latest from life style</span></h4>					
-					</header>
-					<article class="entry-box clearfix">
-						<img class="hover-effect responsive-img" src="placeholders/244x117/244x117-9.jpg" alt="" />
-						<div class="entry-content">
-							<span class="entry-meta">On:&nbsp;</span><a class="entry-date" href="#">August .12 .2012</a>
-							<h3 class="entry-title"><a href="#">There are many vaiations</a></h3>
-							<p>There are many vaiations of passages lorem Ipsum avaible There are many vaiations of passages lorem Ipsum avaible</p>
-							<span class="entry-author">by:&nbsp;</span><a class="entry-author" href="#">Admin</a>
-						</div><!--end:entry_content-->
-					</article><!--end:entry-box-->
-					<ul class="older-posts">
-						<li><a href="#">Becomming Official Olympic</a></li>
-						<li><a href="#">Horse Racing Getting Closer</a></li>
-						<li><a href="#">Horse Racing Getting Closer to Becomming Official Olympic</a></li>
-					</ul><!--end:older-posts-->
-				</aside><!--end:widget-->
-				<div class="clear"></div>
-			</div><!--end:sidebar-->
-			<div class="clear"></div>
-		</div><!--end:secondary-->
-		<div class="clear"></div>
-		<div id="footer-aside" class="box-hover">
-			<aside class="widget">
-				<div class="adv-footer">
-					<a class="banner-bottom-left" href="#"><img class="hover-effect responsive-img" src="placeholders/728x90-banner.jpg" alt="" /></a>
-					<a class="banner-bottom-right" href="#"><img class="hover-effect responsive-img ml-10" src="placeholders/220x90/sample-ad-3.jpg" alt="" /></a>
-				</div><!--end:adv-footer-->
-				<div class="clear"></div>
-			</aside>
-		</div><!--end:footer-aside-->	
-		<footer>
-			<div class="wrapper clearfix">
-				<p id="copyrights">Copyright © 2012 KopaTheme. All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>   <a id="scroll-to-top" href="#top">Back to top</a>
-			</div><!--end:wrapper-->
-		</footer>
-	</div><!--main-content-->
-</div><!--end:wrapper-->		
-
+				<div class="col-md-4 col-xs-6 col-sm-6 footer-grid">
+					<h4 class="footer-head">相关新闻链接</h4>
+					<ul class="flickr">
+						<li><a href="#"><img src="images/bus4.jpg"></a></li>
+						<li><a href="#"><img src="images/bus2.jpg"></a></li>
+						<li><a href="#"><img src="images/bus3.jpg"></a></li>
+						<li><a href="#"><img src="images/tec4.jpg"></a></li>
+						<li><a href="#"><img src="images/tec2.jpg"></a></li>
+						<li><a href="#"><img src="images/tec3.jpg"></a></li>
+						<li><a href="#"><img src="images/bus2.jpg"></a></li>
+						<li><a href="#"><img src="images/bus3.jpg"></a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-12 footer-grid">
+					<h4 class="footer-head">联系我们</h4>
+					<span class="hq">工大软设新闻网站小组</span>
+					<address>
+						<ul class="location">
+							<li><span class="glyphicon glyphicon-map-marker"></span></li>
+							<li>CENTER FOR FINANCIAL ASSISTANCE TO DEPOSED NIGERIAN ROYALTY</li>
+							<div class="clearfix"></div>
+						</ul>	
+						<ul class="location">
+							<li><span class="glyphicon glyphicon-earphone"></span></li>
+							<li>+0 561 111 235</li>
+							<div class="clearfix"></div>
+						</ul>	
+						<ul class="location">
+							<li><span class="glyphicon glyphicon-envelope"></span></li>
+							<li><a href="mailto:info@example.com">mail@example.com</a></li>
+							<div class="clearfix"></div>
+						</ul>						
+					</address>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="wrap">
+				<div class="copyrights col-md-6">
+					<p>Copyright &copy; 2016.Company name All rights reserved.</p><!-- <a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p> -->
+				</div>
+				<div class="footer-social-icons col-md-6">
+					<ul>
+						<li><a class="facebook" href="#"></a></li>
+						<li><a class="twitter" href="#"></a></li>
+						<li><a class="flickr" href="#"></a></li>
+						<li><a class="googleplus" href="#"></a></li>
+						<li><a class="dribbble" href="#"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- footer-section-ends-here -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+				/*
+				var defaults = {
+				wrapID: 'toTop', // fading element id
+				wrapHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+				*/
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!---->
 </body>
 </html>
