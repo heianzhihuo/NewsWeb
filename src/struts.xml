@@ -9,49 +9,61 @@
 	<!-- 在包中导入struts自带的配置文件 -->
 	<include file="struts-default.xml" />
 	<!-- 配置自定义的action -->
-	<package name="action" extends="struts-default">
-	
-		<!-- 新增图书 -->
-		<action name="addBook" class="action.BookAction" method="addBook">
-			<!-- 根据不同的返回字符串类型跳转到不同的页面 -->
-			<result name="success">Success.html</result>
-			<result name="error">Error.html</result>
+
+	<package name="default" extends="struts-default">
+		<global-results>
+			<result name="error">/404.html</result>
+		</global-results>
+	</package>
+
+	<package name="NewsAction" extends="struts-default">
+
+		<action name="index" class="action.newsAction">
+			<result name="success">index.jsp</result>
 		</action>
 
-		<!-- 删除图书 -->
-		<action name="deleteBook" class="action.BookAction" method="deleteBook">
-			<result name="success">Success.html</result>
-			<result name="error">Error.html</result>
+		<action name="hot" class="action.hotNewsAction">
+			<result name="success">hot.jsp</result>
 		</action>
-	
-		<!-- 显示所有图书 -->
-		<action name="showAll" class="action.BookAction" method="showAll">
-			<result>showAll.jsp</result>
+
+		<action name="society" class="action.societyNewsAction">
+			<result name="success">soceity.jsp</result>
 		</action>
-		
-		<!-- 修改图书 -->
-		<action name="reviseBook" class="action.BookAction" method="reviseBook">
-			<result name="revise">reviseBook.jsp</result>
-			<result name="success">Success.html</result>
-			<result name="error">Error.html</result>
+
+
+		<action name="politics" class="action.politicsNewsAction">
+			<result name="success">politics.jsp</result>
 		</action>
-		
-		<!-- 搜索图书 -->
-		<action name="searchBook" class="action.BookAction" method="searchBook">
-			<result name="success">showBook.jsp</result>
-			<result name="error">Error.html</result>
+
+		<action name="finance" class="action.financeNewsAction">
+			<result name="success">finance.jsp</result>
 		</action>
-		
-		<!-- 展示图书 -->
-		<action name="showBook" class="action.BookAction" method="showBook">
-			<result name="success">showBook.jsp</result>
-			<result name="error">Error.html</result>
+
+		<action name="military" class="action.militaryNewsAction">
+			<result name="success">military.jsp</result>
 		</action>
-		
-		<!-- 搜索作者 -->
-		<action name="searchAuthor" class="action.BookAction" method="searchAuthor">
-			<result name="success">showAuthor.jsp</result>
-			<result name="error">Error.html</result>
+
+
+		<action name="education" class="action.educationNewsAction">
+			<result name="success">education.jsp</result>
 		</action>
+
+		<action name="sicence" class="action.sicenceNewsAction">
+			<result name="success">sicence.jsp</result>
+		</action>
+
+
+		<action name="games" class="action.gamesNewsAction">
+			<result name="success">games.jsp</result>
+		</action>
+
+		<action name="sports" class="action.sportsNewsAction">
+			<result name="success">sports.jsp</result>
+		</action>
+
+		<action name="entertainment" class="action.entertainmentNewsAction">
+			<result name="success">entertainment.jsp</result>
+		</action>
+
 	</package>
 </struts>
