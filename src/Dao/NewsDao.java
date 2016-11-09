@@ -120,4 +120,20 @@ public class NewsDao {
 		return newsList;
 	}
 
+	public List<News> searchNews(String keyWords) {
+		List<News> newsList = new ArrayList<News>();
+		String sqlString = "select * from news where Title like " + "'%" + keyWords + "%';";
+		try {
+			ResultSet rs = stmt.executeQuery(sqlString);
+			while (rs.next()) {
+				News tempNews = new News(rs.getInt("NewsID"), rs.getString("Title"), rs.getString("Type"),
+						rs.getString("Link"), rs.getString("Picture"), rs.getInt("Weight"), rs.getDate("PublisDate"),
+						rs.getTime("PublihsTime"), rs.getString("Source"));
+				newsList.add(tempNews);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return newsList;
+	}
 }
