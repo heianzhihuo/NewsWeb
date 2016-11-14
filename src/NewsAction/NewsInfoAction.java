@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import Dao.NewsInfoDao;
 import Dao.TopicDao;
 import model.newsInfo;
+import model.newsTopic;
 
 public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInfo> {
 	/**
@@ -74,10 +75,8 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 	private List<newsInfo> allNews = new ArrayList<newsInfo>();
 
 	public List<newsInfo> getAllNews() throws Exception {
-		System.out.println("Hello");
 		NewsInfoDao newsInfoDao = new NewsInfoDao();
-		allNews = newsInfoDao.getNews();
-		
+		allNews = newsInfoDao.getNews(queryTopicId);
 		return allNews;
 	}
 
@@ -85,7 +84,7 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 		this.allNews = allNews;
 	}
 
-	// topicList字段为客户端返回新闻栏目下拉列表
+	/*// topicList字段为客户端返回新闻栏目下拉列表
 	private String topicList = null;
 
 	public String getTopicList() throws Exception {
@@ -95,6 +94,18 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 	}
 
 	public void setTopicList(String topicList) {
+		this.topicList = topicList;
+	}*/
+	
+	private List<newsTopic> topicList;
+
+	public List<newsTopic> getTopicList() throws Exception {
+		TopicDao topicDao = new TopicDao();
+		topicList = topicDao.getTopics();
+		return topicList;
+	}
+
+	public void setTopicList(List<newsTopic> topicList) {
 		this.topicList = topicList;
 	}
 
@@ -124,6 +135,10 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 	public String showIndexList() {
 		// 返回SUCCESS，表示客户端跳转到Action的success结果视图
 		// 根据Action动态配置规则，结果视图为showIndexList.jsp
+		return SUCCESS;
+	}
+	
+	public String showTopicList(){
 		return SUCCESS;
 	}
 

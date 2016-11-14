@@ -12,21 +12,32 @@
 
 	<package name="default" extends="struts-default">
 		<global-results>
-			<result name="error">/404.html</result>
+			<result name="error">404.html</result>
+			<result name="exception">Exception.jsp</result>
 		</global-results>
 	</package>
 
-	<package name="NewsInfo" extends="struts-default" >
-	
-		<action name="getNewsList" class="NewsAction.NewsInfoAction" method="getNewsList">
-			<result>getNewsList.jsp</result>
+	<package name="NewsInfo" extends="struts-default">
+
+		<action name="getNewsList" class="NewsAction.NewsInfoAction"
+			method="getNewsList">
+			<!--  <result>getNewsList.jsp</result>-->
+			<result>showNewsList.jsp</result>
 		</action>
-		
-		<action name="showIndexList" class="NewsAction.NewsInfoAction" method="showIndexList">
+
+		<action name="showIndexList" class="NewsAction.NewsInfoAction"
+			method="showIndexList">
 			<result>showIndexList.jsp</result>
 		</action>
-		
-		
-		
 	</package>
+
+	<package name="NewsTopic" extends="struts-default">
+		<action name="showTopicList" class="NewsAction.NewsInfoAction"
+			method="showTopicList">
+			<result>showTopicList.jsp</result>
+		</action>
+
+	</package>
+
+
 </struts>

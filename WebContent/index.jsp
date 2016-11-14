@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="sx" uri="/struts-dojo-tags"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>首页</title>
+<sx:head />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -16,7 +19,15 @@
 	content="Express News Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
+	
+	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+
+
 </script>
 <!-- for bootstrap working -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -61,57 +72,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="navigation">
 			<nav class="navbar navbar-default" role="navigation">
-				<div class="wrap">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
-						</button>
+			<div class="wrap">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
 
-					</div>
-					<!--/.navbar-header-->
-
-					<div class="collapse navbar-collapse"
-						id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.jsp">首页</a></li>
-							<li><a href="getNewsList.action?queryTopicId=1">热点</a></li>
-							<li><a href="getNewsList.action?queryTopicId=2">社会</a></li>
-							<li><a href="getNewsList.action?queryTopicId=3">体育</a></li>
-							<li><a href="getNewsList.action?queryTopicId=4">娱乐</a>
-							<li><a href="getNewsList.action?queryTopicId=5">时尚</a></li>
-							<li><a href="getNewsList.action?queryTopicId=6">财经</a></li>
-							<li><a href="getNewsList.action?queryTopicId=7">科技</a></li>
-							<div class="clearfix"></div>
-						</ul>
-						<div class="search">
-							<!-- start search-->
-							<div class="search-box">
-								<div id="sb-search" class="sb-search">
-									<form>
-										<input class="sb-search-input" placeholder="" type="search"
-											name="search" id="search"> <input
-											class="sb-search-submit" type="submit" value=""> <span
-											class="sb-icon-search"> </span>
-									</form>
-								</div>
-							</div>
-							<!-- search-scripts -->
-							<script src="js/classie.js"></script>
-							<script src="js/uisearch.js"></script>
-							<script>
-								new UISearch(document
-										.getElementById('sb-search'));
-							</script>
-							<!-- //search-scripts -->
-						</div>
-						<div class="clearfix"></div>
-					</div>
 				</div>
-				<!--/.navbar-collapse-->
-				<!--/.navbar-->
+				<!--/.navbar-header-->
+
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.jsp">首页</a></li>
+						<sx:div href="showTopicList.action"></sx:div>
+						
+						<div class="clearfix"></div>
+					</ul>
+					<div class="search">
+						<!-- start search-->
+						<div class="search-box">
+							<div id="sb-search" class="sb-search">
+								<form>
+									<input class="sb-search-input" placeholder="" type="search"
+										name="search" id="search"> <input
+										class="sb-search-submit" type="submit" value=""> <span
+										class="sb-icon-search"> </span>
+								</form>
+							</div>
+						</div>
+						<!-- search-scripts -->
+						<script src="js/classie.js"></script>
+						<script src="js/uisearch.js"></script>
+						<script>
+							new UISearch(document.getElementById('sb-search'));
+						</script>
+						<!-- //search-scripts -->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!--/.navbar-collapse--> <!--/.navbar-->
 		</div>
 		</nav>
 	</div>
@@ -170,37 +174,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</div>
 				</div>
+
+
 				<div class="articles">
-					<header>
-						<h3 class="title-head">新闻最热</h3>
-					</header>
+					<h3 class="title-head">热点新闻</h3>
 					<div class="article">
 						<div class="article-left">
 							<a href="single.html"><img src="images/article1.jpg"></a>
 						</div>
+						
 						<div class="article-right">
-							<div class="article-title">
-								<p>
-									On Feb 25, 2015 <a class="span_link" href="#"><span
-										class="glyphicon glyphicon-comment"></span>0 </a><a
-										class="span_link" href="#"><span
-										class="glyphicon glyphicon-eye-open"></span>104 </a><a
-										class="span_link" href="#"><span
-										class="glyphicon glyphicon-thumbs-up"></span>52</a>
-								</p>
-								<a class="title" href="single.html"> The section of the mass
-									media industry that focuses on presenting</a>
-							</div>
-							<div class="article-text">
-								<p>The standard chunk of Lorem Ipsum used since the 1500s.
-									Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-									Malorum" exact original.....</p>
-								<a href="single.html"><img src="images/more.png" alt="" /></a>
-								<div class="clearfix"></div>
-							</div>
+						<!-- 显示新闻列表 --> <s:url var="getlist" action="showIndexList">
+									<s:param name="queryTopicId" value="1" />
+								</s:url> <sx:div theme="ajax"  href="%{getlist}">
+							</sx:div>
 						</div>
 						<div class="clearfix"></div>
+						
 					</div>
+					
 					<div class="article">
 						<div class="article-left">
 							<iframe width="100%" src="images/article4.jpg" frameborder="0"
@@ -228,6 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
+					
 					<div class="article">
 						<div class="article-left">
 							<a href="single.html"><img src="images/article3.jpg"></a>
@@ -255,6 +248,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
+					
 					<div class="article">
 						<div class="article-left">
 							<a href="single.html"><img src="images/article4.jpg"></a>
@@ -281,6 +275,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
+					
 					<div class="article">
 						<div class="article-left">
 							<iframe width="100%" src="images/tec4.jpg" frameborder="0"
@@ -309,9 +304,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"></div>
 					</div>
 				</div>
+
+
 				<div class="life-style">
 					<header>
-						<h3 class="title-head">生活娱乐</h3>
+					<h3 class="title-head">生活娱乐</h3>
 					</header>
 					<div class="life-style-grids">
 						<div class="life-style-left-grid">
@@ -344,7 +341,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="s-grid-left">
 						<div class="cricket">
 							<header>
-								<h3 class="title-head">财经</h3>
+							<h3 class="title-head">财经</h3>
 							</header>
 							<div class="c-sports-main">
 								<div class="c-image">
@@ -411,7 +408,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="s-grid-right">
 						<div class="cricket">
 							<header>
-								<h3 class="title-popular">科技</h3>
+							<h3 class="title-popular">科技</h3>
 							</header>
 							<div class="c-sports-main">
 								<div class="c-image">
@@ -492,332 +489,324 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="list_vertical">
 						<section class="accordation_menu">
-							<div>
-								<input id="label-1" name="lida" type="radio" checked /> <label
-									for="label-1" id="item1"><i class="ferme"> </i>订阅新闻<i
-									class="icon-plus-sign i-right1"></i><i
-									class="icon-minus-sign i-right2"></i></label>
-								<div class="content" id="a1">
-									<div class="scrollbar" id="style-2">
-										<div class="force-overflow">
-											<div class="popular-post-grids">
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/bus2.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html"> The section of
-															the mass media industry</a>
-														<p>
-															On Feb 25 <a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>3 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+						<div>
+							<input id="label-1" name="lida" type="radio" checked /> <label
+								for="label-1" id="item1"><i class="ferme"> </i>订阅新闻<i
+								class="icon-plus-sign i-right1"></i><i
+								class="icon-minus-sign i-right2"></i></label>
+							<div class="content" id="a1">
+								<div class="scrollbar" id="style-2">
+									<div class="force-overflow">
+										<div class="popular-post-grids">
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/bus2.jpg" alt="" /></a>
 												</div>
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/bus1.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html"> Lorem Ipsum is
-															simply dummy text printing</a>
-														<p>
-															On Apr 14 <a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>2 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html"> The section of
+														the mass media industry</a>
+													<p>
+														On Feb 25 <a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>3 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
 												</div>
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/bus3.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html">There are many
-															variations of Lorem</a>
-														<p>
-															On Jun 25 <a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>0 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/bus1.jpg" alt="" /></a>
 												</div>
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/bus4.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html">Sed ut
-															perspiciatis unde omnis iste natus</a>
-														<p>
-															On Jan 25 <a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>1 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html"> Lorem Ipsum is
+														simply dummy text printing</a>
+													<p>
+														On Apr 14 <a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>2 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
 												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/bus3.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html">There are many
+														variations of Lorem</a>
+													<p>
+														On Jun 25 <a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>0 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/bus4.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html">Sed ut
+														perspiciatis unde omnis iste natus</a>
+													<p>
+														On Jan 25 <a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>1 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
+												</div>
+												<div class="clearfix"></div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div>
-								<input id="label-2" name="lida" type="radio" /> <label
-									for="label-2" id="item2"><i class="icon-leaf" id="i2"></i>热点新闻<i
-									class="icon-plus-sign i-right1"></i><i
-									class="icon-minus-sign i-right2"></i></label>
-								<div class="content" id="a2">
-									<div class="scrollbar" id="style-2">
-										<div class="force-overflow">
-											<div class="popular-post-grids">
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/tec2.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html"> The section of
-															the mass media industry</a>
-														<p>
-															2016-12-03<a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>3 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+						</div>
+						<div>
+							<input id="label-2" name="lida" type="radio" /> <label
+								for="label-2" id="item2"><i class="icon-leaf" id="i2"></i>热点新闻<i
+								class="icon-plus-sign i-right1"></i><i
+								class="icon-minus-sign i-right2"></i></label>
+							<div class="content" id="a2">
+								<div class="scrollbar" id="style-2">
+									<div class="force-overflow">
+										<div class="popular-post-grids">
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec2.jpg" alt="" /></a>
 												</div>
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/tec1.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html"> Lorem Ipsum is
-															simply dummy text printing</a>
-														<p>
-															2016-11-09<a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>2 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html"> The section of
+														the mass media industry</a>
+													<p>
+														2016-12-03<a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>3 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
 												</div>
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/tec3.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html">There are many
-															variations of Lorem</a>
-														<p>
-															2016-11-25<a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>0 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec1.jpg" alt="" /></a>
 												</div>
-												<div class="popular-post-grid">
-													<div class="post-img">
-														<a href="single.html"><img src="images/tec4.jpg"
-															alt="" /></a>
-													</div>
-													<div class="post-text">
-														<a class="pp-title" href="single.html">Sed ut
-															perspiciatis unde omnis iste natus</a>
-														<p>
-															2016-11-20<a class="span_link" href="#"><span
-																class="glyphicon glyphicon-comment"></span>1 </a><a
-																class="span_link" href="#"><span
-																class="glyphicon glyphicon-eye-open"></span>56 </a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html"> Lorem Ipsum is
+														simply dummy text printing</a>
+													<p>
+														2016-11-09<a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>2 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
 												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec3.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html">There are many
+														variations of Lorem</a>
+													<p>
+														2016-11-25<a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>0 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="popular-post-grid">
+												<div class="post-img">
+													<a href="single.html"><img src="images/tec4.jpg" alt="" /></a>
+												</div>
+												<div class="post-text">
+													<a class="pp-title" href="single.html">Sed ut
+														perspiciatis unde omnis iste natus</a>
+													<p>
+														2016-11-20<a class="span_link" href="#"><span
+															class="glyphicon glyphicon-comment"></span>1 </a><a
+															class="span_link" href="#"><span
+															class="glyphicon glyphicon-eye-open"></span>56 </a>
+													</p>
+												</div>
+												<div class="clearfix"></div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div>
-								<input id="label-3" name="lida" type="radio" /> <label
-									for="label-3" id="item3"><i class="icon-trophy" id="i3"></i>热评<i
-									class="icon-plus-sign i-right1"></i><i
-									class="icon-minus-sign i-right2"></i></label>
-								<div class="content" id="a3">
-									<div class="scrollbar" id="style-2">
-										<div class="force-overflow">
-											<div class="response">
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">扯不断的红尘</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>2016-12-08</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+						</div>
+						<div>
+							<input id="label-3" name="lida" type="radio" /> <label
+								for="label-3" id="item3"><i class="icon-trophy" id="i3"></i>热评<i
+								class="icon-plus-sign i-right1"></i><i
+								class="icon-minus-sign i-right2"></i></label>
+							<div class="content" id="a3">
+								<div class="scrollbar" id="style-2">
+									<div class="force-overflow">
+										<div class="response">
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">扯不断的红尘</a>
+													</h5>
 												</div>
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">冷月妖娆</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>2016-12-09</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>2016-12-08</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
 												</div>
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">芒果奶昔</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>MAY 25, 2015</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">冷月妖娆</a>
+													</h5>
 												</div>
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">大傻兔</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>2016-12-09</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>2016-12-09</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
 												</div>
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">匿名</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>2016-11-29</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">芒果奶昔</a>
+													</h5>
 												</div>
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">匿名</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>2016-11-28</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>MAY 25, 2015</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
 												</div>
-												<div class="media response-info">
-													<div class="media-left response-text-left">
-														<a href="#"> <img class="media-object"
-															src="images/icon1.png" alt="" />
-														</a>
-														<h5>
-															<a href="#">宝贝狐</a>
-														</h5>
-													</div>
-													<div class="media-body response-text-right">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-															elit,There are many variations of passages of Lorem Ipsum
-															available, sed do eiusmod tempor incididunt ut labore et
-															dolore magna aliqua.</p>
-														<ul>
-															<li>2016-12-03</li>
-															<li><a href="single.html">回复</a></li>
-														</ul>
-													</div>
-													<div class="clearfix"></div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">大傻兔</a>
+													</h5>
 												</div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>2016-12-09</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">匿名</a>
+													</h5>
+												</div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>2016-11-29</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">匿名</a>
+													</h5>
+												</div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>2016-11-28</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="media response-info">
+												<div class="media-left response-text-left">
+													<a href="#"> <img class="media-object"
+														src="images/icon1.png" alt="" />
+													</a>
+													<h5>
+														<a href="#">宝贝狐</a>
+													</h5>
+												</div>
+												<div class="media-body response-text-right">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+														elit,There are many variations of passages of Lorem Ipsum
+														available, sed do eiusmod tempor incididunt ut labore et
+														dolore magna aliqua.</p>
+													<ul>
+														<li>2016-12-03</li>
+														<li><a href="single.html">回复</a></li>
+													</ul>
+												</div>
+												<div class="clearfix"></div>
 											</div>
 										</div>
+									</div>
 
-									</div>
 								</div>
 							</div>
+						</div>
 						</section>
 					</div>
 					<div class="side-bar-articles">
@@ -847,7 +836,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="secound_half">
 					<div class="tags">
 						<header>
-							<h3 class="title-head">热门标签</h3>
+						<h3 class="title-head">热门标签</h3>
 						</header>
 						<p>
 							<a class="tag1" href="single.html">杨幂</a> <a class="tag2"
@@ -868,7 +857,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="popular-news">
 						<header>
-							<h3 class="title-popular">头条新闻</h3>
+						<h3 class="title-popular">头条新闻</h3>
 						</header>
 						<div class="popular-grids">
 							<div class="popular-grid">

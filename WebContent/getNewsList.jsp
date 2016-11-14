@@ -41,8 +41,6 @@
 								<!-- 显示新闻列表 --> <s:url var="getlist" action="showIndexList">
 									<s:param name="queryTopicId" value="1" />
 								</s:url> <sx:div theme="ajax"  href="%{getlist}"></sx:div>
-
-
 								<div align="right">
 									<a href="getNewsList.action?queryTopicId=1">更多...</a>
 								</div>
