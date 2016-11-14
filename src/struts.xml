@@ -16,58 +16,17 @@
 		</global-results>
 	</package>
 
-	<package name="NewsAction" extends="struts-default">
-
-		<action name="index" class="NewsAction.newsAction">
-			<result name="success">index.jsp</result>
-		</action>
-
-		<action name="hot" class="NewsAction.hotNewsAction">
-			<result name="success">hot.jsp</result>
-		</action>
-
-		<action name="society" class="NewsAction.societyNewsAction">
-			<result name="success">soceity.jsp</result>
-		</action>
-
-
-		<action name="politics" class="NewsAction.politicsNewsAction">
-			<result name="success">politics.jsp</result>
-		</action>
-
-		<action name="finance" class="NewsAction.financeNewsAction">
-			<result name="success">finance.jsp</result>
-		</action>
-
-		<action name="military" class="NewsAction.militaryNewsAction">
-			<result name="success">military.jsp</result>
-		</action>
-
-
-		<action name="education" class="NewsAction.educationNewsAction">
-			<result name="success">education.jsp</result>
-		</action>
-
-		<action name="sicence" class="NewsAction.sicenceNewsAction">
-			<result name="success">sicence.jsp</result>
-		</action>
-
-
-		<action name="games" class="NewsAction.gamesNewsAction">
-			<result name="success">games.jsp</result>
-		</action>
-
-		<action name="sports" class="NewsAction.sportsNewsAction">
-			<result name="success">sports.jsp</result>
-		</action>
-
-		<action name="entertainment" class="NewsAction.entertainmentNewsAction">
-			<result name="success">entertainment.jsp</result>
+	<package name="NewsInfo" extends="struts-default" >
+	
+		<action name="getNewsList" class="NewsAction.NewsInfoAction" method="getNewsList">
+			<result>getNewsList.jsp</result>
 		</action>
 		
-		<action name="search" class="NewsAction.searchNewsAction">
-			<result name="success">searchResult.jsp</result>
+		<action name="showIndexList" class="NewsAction.NewsInfoAction" method="showIndexList">
+			<result>showIndexList.jsp</result>
 		</action>
-
+		
+		
+		
 	</package>
 </struts>
