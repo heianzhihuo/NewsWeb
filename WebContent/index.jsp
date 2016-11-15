@@ -20,13 +20,7 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
-	
-	
-	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-
-
-
 
 </script>
 <!-- for bootstrap working -->
@@ -120,6 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</nav>
 	</div>
 	</div>
+	
 	<!-- header-section-ends-here -->
 	<div class="wrap">
 		<div class="move-text">
@@ -148,6 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</script>
 		</div>
 	</div>
+	
 	<!--  <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div> -->
 	<!-- content-section-starts-here -->
 	<div class="main-body">
@@ -174,7 +170,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</div>
 				</div>
-
 
 				<div class="articles">
 					<h3 class="title-head">热点新闻</h3>
@@ -223,61 +218,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 					<div class="article">
 						<div class="article-left">
-							<a href="single.html"><img src="images/article3.jpg"></a>
-						</div>
-						<div class="article-right">
-							<div class="article-title">
-								<p>
-									On Jun 21, 2015 <a class="span_link" href="#"><span
-										class="glyphicon glyphicon-comment"></span>0 </a><a
-										class="span_link" href="#"><span
-										class="glyphicon glyphicon-eye-open"></span>181 </a><a
-										class="span_link" href="#"><span
-										class="glyphicon glyphicon-thumbs-up"></span>89</a>
-								</p>
-								<a class="title" href="single.html">There are many
-									variations that focuses on presenting</a>
-							</div>
-							<div class="article-text">
-								<p>Sed ut perspiciatis unde omnis iste natus error sit
-									voluptatem accusantium doloremque laudantium, totam rem
-									aperiam.....</p>
-								<a href="single.html"><img src="images/more.png" alt="" /></a>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					
-					<div class="article">
-						<div class="article-left">
-							<a href="single.html"><img src="images/article4.jpg"></a>
-						</div>
-						<div class="article-right">
-							<div class="article-title">
-								<p>
-									On Jan 17, 2015 <a class="span_link" href="#"><span
-										class="glyphicon glyphicon-comment"></span>1 </a><a
-										class="span_link" href="#"><span
-										class="glyphicon glyphicon-eye-open"></span>144 </a><a
-										class="span_link" href="#"><span
-										class="glyphicon glyphicon-thumbs-up"></span>74</a>
-								</p>
-								<a class="title" href="single.html">Lorem ipsum dolor sit
-									amet, consectetur adipiscing elit</a>
-							</div>
-							<div class="article-text">
-								<p>But I must explain to you how all this mistaken idea of
-									denouncing pleasure and praising pain was born.....</p>
-								<a href="single.html"><img src="images/more.png" alt="" /></a>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					
-					<div class="article">
-						<div class="article-left">
 							<iframe width="100%" src="images/tec4.jpg" frameborder="0"
 								allowfullscreen></iframe>
 						</div>
@@ -303,13 +243,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
+				
 				</div>
 
 
 				<div class="life-style">
-					<header>
-					<h3 class="title-head">生活娱乐</h3>
-					</header>
+					<h3 class="title-head">财经</h3>
 					<div class="life-style-grids">
 						<div class="life-style-left-grid">
 							<a href="single.html"><img src="images/l1.jpg" alt="" /></a> <a
