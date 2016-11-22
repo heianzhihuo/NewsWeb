@@ -21,7 +21,7 @@
 
 		<action name="getNewsList" class="NewsAction.NewsInfoAction"
 			method="getNewsList">
-			<!--  <result>getNewsList.jsp</result>-->
+			<!-- <result>getNewsList.jsp</result> -->
 			<result>showNewsList.jsp</result>
 		</action>
 
@@ -37,6 +37,13 @@
 			<result>showTopicList.jsp</result>
 		</action>
 
+	</package>
+
+	<package name="UserInfo" extends="struts-default">
+		<action name="Login" class="userAction.UserAction" method="Login">
+			<result>Success.html</result>
+			<result name="input">login.jsp</result>
+		</action>
 	</package>
 
 
