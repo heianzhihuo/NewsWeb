@@ -20,7 +20,9 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 </script>
 <!-- for bootstrap working -->
@@ -62,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- header-section-starts-here -->
 	<div class="header-bottom">
 		<div class="logo text-center">
-			<a href="index.html"><img src="images/logo.jpg" alt="" /></a>
+			<a href="index.jsp"><img src="images/logo.jpg" alt="" /></a>
 		</div>
 		<div class="navigation">
 			<nav class="navbar navbar-default" role="navigation">
@@ -82,15 +84,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.jsp">首页</a></li>
-						<sx:div href="showTopicList.action"></sx:div>
-						<div class="clearfix"></div>
 					</ul>
+					<sx:div href="showTopicList.action"></sx:div>
 					<div class="search">
 						<!-- start search-->
 						<div class="search-box">
 							<div id="sb-search" class="sb-search">
 								<form>
-									<input class="sb-search-input" placeholder="" type="search"
+									<input class="sb-search-input"  type="search"
 										name="search" id="search"> <input
 										class="sb-search-submit" type="submit" value=""> <span
 										class="sb-icon-search"> </span>
@@ -113,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</nav>
 	</div>
 	</div>
-	
+
 	<!-- header-section-ends-here -->
 	<div class="wrap">
 		<div class="move-text">
@@ -142,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</script>
 		</div>
 	</div>
-	
+
 	<!--  <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div> -->
 	<!-- content-section-starts-here -->
 	<div class="main-body">
@@ -176,17 +177,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="article-left">
 							<a href="single.html"><img src="images/article1.jpg"></a>
 						</div>
-						
+
 						<div class="article-right">
-						<!-- 显示新闻列表 --> <s:url var="getlist" action="showIndexList">
-									<s:param name="queryTopicId" value="1" />
-								</s:url> <sx:div theme="ajax"  href="%{getlist}">
+							<!-- 显示新闻列表 -->
+							<s:url var="getlist" action="showIndexList">
+								<s:param name="queryTopicId" value="1" />
+							</s:url>
+							<sx:div theme="ajax" href="%{getlist}">
 							</sx:div>
 						</div>
 						<div class="clearfix"></div>
-						
+
 					</div>
-					
+
 					<div class="article">
 						<div class="article-left">
 							<iframe width="100%" src="images/article4.jpg" frameborder="0"
@@ -214,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					
+
 					<div class="article">
 						<div class="article-left">
 							<iframe width="100%" src="images/tec4.jpg" frameborder="0"
@@ -242,7 +245,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clearfix"></div>
 					</div>
-				
+
 				</div>
 
 
@@ -771,28 +774,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 				</div>
-				<div class="secound_half">
-					<div class="tags">
-						<header>
-						<h3 class="title-head">热门标签</h3>
-						</header>
-						<p>
-							<a class="tag1" href="single.html">杨幂</a> <a class="tag2"
-								href="single.html">赵丽颖</a> <a class="tag3" href="single.html">美国大选</a>
-							<a class="tag4" href="single.html">中俄核能</a> <a class="tag5"
-								href="single.html">习近平</a> <a class="tag6" href="single.html">万圣节</a>
-							<a class="tag7" href="single.html">哈尔滨</a> <a class="tag8"
-								href="single.html">淘宝</a> <a class="tag9" href="single.html">百度事故</a>
-							<a class="tag10" href="single.html">房价下跌</a> <a class="tag11"
-								href="single.html">股市</a> <a class="tag12" href="single.html">许嵩</a>
-							<a class="tag13" href="single.html">java</a> <a class="tag14"
-								href="single.html">计算机</a> <a class="tag15" href="single.html">金融</a>
-							<a class="tag16" href="single.html">大学排名</a> <a class="tag17"
-								href="single.html">央视春晚</a> <a class="tag18" href="single.html">人机大战</a>
-							<a class="tag19" href="single.html">英语六级</a> <a class="tag20"
-								href="single.html">IT</a>
-						</p>
-					</div>
+				
+				
 					<div class="popular-news">
 						<header>
 						<h3 class="title-popular">头条新闻</h3>
