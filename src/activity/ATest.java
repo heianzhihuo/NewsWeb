@@ -1,30 +1,20 @@
 package activity;
 
-import java.util.Iterator;
-import java.util.Map;
 
-import model.newsInfo;
+import Dao.NewsInfoDao;
 
 public class ATest {
-	ChinaNews test1 = new ChinaNews();
-	
-	public void testGetNewsInfo() {
-		test1.getTopics();
-		Iterator iter =  test1.TopicList.entrySet().iterator();
-		while (iter.hasNext()) {
-			Map.Entry entry = (Map.Entry) iter.next();
-			System.out.print(entry.getKey());
-			System.out.println(":"+entry.getValue());
-		}
-		
-		String url = "http://www.chinanews.com/sh/2016/11-24/8073190.shtml";
-		newsInfo testnews= test1.getNewsInfo(url) ;
-		System.out.println(testnews.getTitle());
-		
-	}
 	
 	public static void main(String[] args) {
-		ATest pATest = new ATest();
-		pATest.testGetNewsInfo();
+		//pATest.testGetNewsInfo();
+		//NewsInfoDao newsDao = new NewsInfoDao();
+		ChinaNews chinaNews = new ChinaNews();
+		chinaNews.getNewsInfo("http://www.chinanews.com/gj/2016/11-26/8075241.shtml");
+		/*int topic = chinaNews.getTopicId("金融");
+		System.out.println(topic);*/
+		
+		/*ArrayList<newsInfo> newsList = newsDao.getNews(1);
+		System.out.println(newsList.get(0).getPublishTime());*/
+		//Date date = new Date(2016,, day)
 	}
 }

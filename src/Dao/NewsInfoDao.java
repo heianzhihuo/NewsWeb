@@ -9,60 +9,78 @@ import model.newsInfo;
 public class NewsInfoDao {
 	private Dao mysqlDao;
 
-	public NewsInfoDao() throws Exception {
+	public NewsInfoDao() {
 		mysqlDao = new Dao();
 	}
 
-	public void InitData() throws Exception {
+	public void InitData() {
 		mysqlDao.doExecute("truncate table news");
 	}
 
-	public List<newsInfo> getNews() throws Exception {
-		List<newsInfo> newsList = new ArrayList<newsInfo>();
+	public ArrayList<newsInfo> getNews() {
+		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
 		String sqlString = "select * from newsinfo;";
 		ResultSet rs = mysqlDao.doQuery(sqlString);
-		while (rs.next()) {
-			newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
-					rs.getString("url"), rs.getString("picture"), rs.getInt("weight"), rs.getDate("publishDate"),
-					rs.getTime("publishTime"), rs.getString("source"));
-			newsList.add(temp);
+		try {
+			while (rs.next()) {
+				newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
+						rs.getString("url"), rs.getString("picture"), rs.getInt("weight"),
+						rs.getTimestamp("publishTime"), rs.getString("source"));
+				newsList.add(temp);
+			}
+			return newsList;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
 		}
-		return newsList;
 	}
 
-	public List<newsInfo> getNews(int topicId) throws Exception {
-		
-		List<newsInfo> newsList = new ArrayList<newsInfo>();
-		String sqlString = "select * from newsinfo where topicId = " + topicId +";";
+	public ArrayList<newsInfo> getNews(int topicId) {
+
+		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
+		String sqlString = "select * from newsinfo where topicId = " + topicId + ";";
 		ResultSet rs = mysqlDao.doQuery(sqlString);
-		while (rs.next()) {
-			newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
-					rs.getString("url"), rs.getString("picture"), rs.getInt("weight"), rs.getDate("publishDate"),
-					rs.getTime("publishTime"), rs.getString("source"));
-			newsList.add(temp);
+		try {
+			while (rs.next()) {
+				newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
+						rs.getString("url"), rs.getString("picture"), rs.getInt("weight"),
+						rs.getTimestamp("publishTime"), rs.getString("source"));
+				newsList.add(temp);
+			}
+			return newsList;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
-		return newsList;
 	}
 
-	public List<newsInfo> searchNews(String keyWord) throws Exception {
-		List<newsInfo> newsList = new ArrayList<newsInfo>();
+	public ArrayList<newsInfo> searchNews(String keyWord) {
+		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
 		String sqlString = "select * from newsinfo where Title like " + "'%" + keyWord + "%';";
 		ResultSet rs = mysqlDao.doQuery(sqlString);
-		while (rs.next()) {
-			newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
-					rs.getString("url"), rs.getString("picture"), rs.getInt("weight"), rs.getDate("publishDate"),
-					rs.getTime("publichTime"), rs.getString("source"));
-			newsList.add(temp);
+		try {
+			while (rs.next()) {
+				newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
+						rs.getString("url"), rs.getString("picture"), rs.getInt("weight"),
+						rs.getTimestamp("publichTime"), rs.getString("source"));
+				newsList.add(temp);
+			}
+			return newsList;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
-		return newsList;
 	}
 
-	public void addNews(newsInfo news) throws Exception {
-		String sqlString = "insert into newsInfo (newsId,title,topicId,url,picture,weight,publishDate,publishTime"
-				+ "source) values +(";
+	public void addNews(newsInfo news) {
+		String sqlString = "insert into newsInfo (title,topicId,url,picture,weight,publishTime,source) values ('"
+				+ news.getTitle() + "'," + news.getTopicId() + ",'" + news.getUrl() + "'," + news.getPicture() + ",'"
+				+ news.getWeight() + "','" + news.getPublishTime() + "','" + news.getSource() + "');";
+		int result = mysqlDao.doUpdate(sqlString);
 	}
 
-	public void addNews(List<newsInfo> newsList) throws  Exception {
+	public void addNews(List<newsInfo> newsList) {
 		String sqlString = "";
 	}
 

@@ -2,6 +2,7 @@ package model;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 public class newsInfo {
 	private int newsId;
@@ -10,23 +11,22 @@ public class newsInfo {
 	private String url;
 	private String picture;
 	private int weight;
-	private Date publishDate;
-	private Time publichTime;
+	private Timestamp publishTime;
 	private String source;
 
 	public newsInfo() {
 	}
 
-	public newsInfo(int newsId, String title, int topicId, String url, String picture, int weight, Date publishDate,
-			Time publichTime, String source) {
+	public newsInfo(int newsId, String title, int topicId, String url, String picture, int weight,
+			Timestamp publishTime, String source) {
+		super();
 		this.newsId = newsId;
 		this.title = title;
 		this.topicId = topicId;
 		this.url = url;
 		this.picture = picture;
 		this.weight = weight;
-		this.publishDate = publishDate;
-		this.publichTime = publichTime;
+		this.publishTime = publishTime;
 		this.source = source;
 	}
 
@@ -78,20 +78,12 @@ public class newsInfo {
 		this.weight = weight;
 	}
 
-	public Date getPublishDate() {
-		return publishDate;
+	public Timestamp getPublishTime() {
+		return publishTime;
 	}
 
-	public void setPublishDate(Date publishDate) {
-		this.publishDate = publishDate;
-	}
-
-	public Time getPublichTime() {
-		return publichTime;
-	}
-
-	public void setPublichTime(Time publichTime) {
-		this.publichTime = publichTime;
+	public void setPublishTime(Timestamp publishTime) {
+		this.publishTime = publishTime;
 	}
 
 	public String getSource() {
@@ -101,5 +93,4 @@ public class newsInfo {
 	public void setSource(String source) {
 		this.source = source;
 	}
-
 }
