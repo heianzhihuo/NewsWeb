@@ -22,13 +22,14 @@ public class UserDao {
 		}
 	}
 
-	public int addUser(String username, String password) throws Exception {
-		String sqlString = "select * from userinfo where username = '" + username + "';";
+	public int addUser(userinfo user) throws Exception {
+		String sqlString = "select * from userinfo where username = '" + user.getUsername() + "';";
 		ResultSet rSet = mysqlDao.doQuery(sqlString);
 		if (rSet.next()) {
 			return 0;
 		} else {
-			sqlString = "insert into userinfo (username,password) values ('" + username + "','" + password + "');";
+			sqlString = "insert into userinfo (username,password,email) values ('" + user.getUsername() + "','"
+					+ user.getPassword() + "','" + user.getEmail() + "');";
 			mysqlDao.doUpdate(sqlString);
 			return 1;
 		}

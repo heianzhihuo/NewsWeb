@@ -44,6 +44,11 @@
 			<result>Success.html</result>
 			<result name="input">login.jsp</result>
 		</action>
+		
+		<action name="Register" class="userAction.UserAction" method="Register">
+			<result>Success.html</result>
+			<result name="input">register.jsp</result>
+		</action>
 	</package>
 
 

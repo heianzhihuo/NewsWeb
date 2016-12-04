@@ -8,6 +8,7 @@ public class userinfo {
 	private int userId;
 	private String username;
 	private String password;
+	private String email;
 	private List<Integer> favorites = new ArrayList<Integer>();
 
 	public userinfo() {
@@ -51,6 +52,14 @@ public class userinfo {
 
 	public void setFavorites(List<Integer> favorites) {
 		this.favorites = favorites;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

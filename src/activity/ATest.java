@@ -6,10 +6,14 @@ import Dao.NewsInfoDao;
 public class ATest {
 	
 	public static void main(String[] args) {
+		NewsInfoDao mysqlDao = new NewsInfoDao();
+		mysqlDao.InitData();
 		//pATest.testGetNewsInfo();
 		//NewsInfoDao newsDao = new NewsInfoDao();
 		ChinaNews chinaNews = new ChinaNews();
-		chinaNews.getNewsInfo("http://www.chinanews.com/gj/2016/11-26/8075241.shtml");
+		chinaNews.getAll();
+		//chinaNews.getOnePage("http://www.chinanews.com/scroll-news/news1.html");
+		//chinaNews.getNewsInfo("http://www.chinanews.com/gj/2016/11-26/8075241.shtml");
 		/*int topic = chinaNews.getTopicId("金融");
 		System.out.println(topic);*/
 		

@@ -26,9 +26,10 @@ public class UserAction extends ActionSupport implements ModelDriven<userinfo> {
 	}
 
 	public String Login() throws Exception {
+		// 登录
 		String username = user.getUsername();
 		// String password = user.getPassword();
-		System.out.println(username);
+		// System.out.println(username);
 		UserDao userDao = new UserDao();
 		String password = userDao.getPassword(username);
 		if (password == null) {
@@ -45,16 +46,18 @@ public class UserAction extends ActionSupport implements ModelDriven<userinfo> {
 	}
 
 	public String Logout() throws Exception {
+		// 登出
 		ActionContext.getContext().getSession().put("username", null);
 		ActionContext.getContext().getSession().put("password", null);
 		return SUCCESS;
 	}
-	
+
 	public String Register() throws Exception {
+		// 注册
 		String username = user.getUsername();
 		String password = user.getPassword();
 		UserDao userDao = new UserDao();
-		if(userDao.addUser(username, password)==0) {
+		if (userDao.addUser(user) == 0) {
 			this.addFieldError("username", "该用户名已经被注册了！");
 			return INPUT;
 		} else {
@@ -63,7 +66,7 @@ public class UserAction extends ActionSupport implements ModelDriven<userinfo> {
 			return SUCCESS;
 		}
 	}
-	
+
 	public String addFavorites() {
 		return SUCCESS;
 	}

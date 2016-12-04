@@ -5,7 +5,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
 <head>
-<title>登录</title>
+<title>注册</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="description"
 	content="Expand, contract, animate forms with jQuery wihtout leaving the page" />
@@ -27,30 +27,31 @@
 	});
 	Cufon.replace('.back');
 </script>
-<sx:head />
 </head>
 <body>
 	<div class="wrapper">
 		<div class="content">
 			<div id="form_wrapper" class="form_wrapper">
-				<h3>Login</h3>
-				<s:form class="login active" action="Login" method="post"
+				<h3>Register</h3>
+				<s:form class="register active" action="Register" method="post"
 					theme="simple">
-					<div>
-						<label>用户名：</label>
-						<s:textfield name="username" />
-					</div>
-					<div>
-						<label>密码：</label>
-						<s:password name="password" size="22" type="password" />
+					<div class="column">
+						<div>
+							<label>用户名：</label>
+							<s:textfield name="username"  required="true"/>
+						</div>
+						<div>
+							<label>邮箱:</label>
+							<s:textfield name="email" required="true"/>
+						</div>
+						<div>
+							<label>密码：</label>
+							<s:password name="password" size="22" type="password" required="true"/>
+						</div>
 					</div>
 					<div class="bottom">
-						<div class="remember">
-							<input type="checkbox" /><span>记住我</span>
-						</div>
 						<s:submit value="确定" type="button" />
 						<s:reset value="重写" type="button" />
-						<a href="register.jsp">没有账号，点击注册</a>
 					</div>
 				</s:form>
 				<s:if test="hasFieldErrors()">
@@ -63,8 +64,6 @@
 			<div class="clear"></div>
 		</div>
 	</div>
-
-
 
 
 	<!-- The JavaScript -->

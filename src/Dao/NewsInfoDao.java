@@ -14,7 +14,7 @@ public class NewsInfoDao {
 	}
 
 	public void InitData() {
-		mysqlDao.doExecute("truncate table news");
+		mysqlDao.doExecute("truncate table newsinfo");
 	}
 
 	public ArrayList<newsInfo> getNews() {
