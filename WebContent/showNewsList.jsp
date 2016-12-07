@@ -103,6 +103,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.jsp">首页</a></li>
 					</ul>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="showSubscribtion">我的订阅</a></li>
+					</ul>
 					<sx:div href="showTopicList.action"></sx:div>
 					<div class="search">
 						<!-- start search-->

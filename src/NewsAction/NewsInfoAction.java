@@ -88,6 +88,14 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 
 	private List<newsInfo> favNews = new ArrayList<newsInfo>();
 
+	public List<newsInfo> getFavNews() {
+		return favNews;
+	}
+
+	public void setFavNews(List<newsInfo> favNews) {
+		this.favNews = favNews;
+	}
+
 	public String showSubscribtion() {
 		UserDao userDao = new UserDao();
 		NewsInfoDao newsInfoDao = new NewsInfoDao();
