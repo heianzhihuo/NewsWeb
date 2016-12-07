@@ -102,9 +102,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="index.jsp">首页</a></li>
-						<sx:div href="showTopicList.action"></sx:div>
-						<div class="clearfix"></div>
 					</ul>
+					<sx:div href="showTopicList.action"></sx:div>
 					<div class="search">
 						<!-- start search-->
 						<div class="search-box">

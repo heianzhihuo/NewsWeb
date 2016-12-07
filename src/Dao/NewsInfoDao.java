@@ -18,6 +18,7 @@ public class NewsInfoDao {
 	}
 
 	public ArrayList<newsInfo> getNews() {
+		// 获取所有新闻
 		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
 		String sqlString = "select * from newsinfo;";
 		ResultSet rs = mysqlDao.doQuery(sqlString);
@@ -30,14 +31,13 @@ public class NewsInfoDao {
 			}
 			return newsList;
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			return null;
 		}
 	}
 
 	public ArrayList<newsInfo> getNews(int topicId) {
-
+		// 获取某类新闻的新闻列表
 		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
 		String sqlString = "select * from newsinfo where topicId = " + topicId + ";";
 		ResultSet rs = mysqlDao.doQuery(sqlString);
@@ -55,7 +55,26 @@ public class NewsInfoDao {
 		}
 	}
 
+	public ArrayList<newsInfo> getNews(String favoriteString) {
+		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
+		String sqlString = "select * from newsinfo where topicId in " + favoriteString + ";";
+		ResultSet rs = mysqlDao.doQuery(sqlString);
+		try {
+			while (rs.next()) {
+				newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
+						rs.getString("url"), rs.getString("picture"), rs.getInt("weight"),
+						rs.getTimestamp("publishTime"), rs.getString("source"));
+				newsList.add(temp);
+			}
+			return newsList;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public ArrayList<newsInfo> searchNews(String keyWord) {
+		// 查找包含某个词的新闻
 		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
 		String sqlString = "select * from newsinfo where Title like " + "'%" + keyWord + "%';";
 		ResultSet rs = mysqlDao.doQuery(sqlString);
@@ -74,6 +93,7 @@ public class NewsInfoDao {
 	}
 
 	public void addNews(newsInfo news) {
+		// 向数据库中添加新闻
 		String sqlString = "insert into newsInfo (title,topicId,url,picture,weight,publishTime,source) values ('"
 				+ news.getTitle() + "'," + news.getTopicId() + ",'" + news.getUrl() + "'," + news.getPicture() + ",'"
 				+ news.getWeight() + "','" + news.getPublishTime() + "','" + news.getSource() + "');";

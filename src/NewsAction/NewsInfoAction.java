@@ -3,11 +3,13 @@ package NewsAction;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import Dao.NewsInfoDao;
 import Dao.TopicDao;
+import Dao.UserDao;
 import model.newsInfo;
 import model.newsTopic;
 
@@ -84,29 +86,20 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 		this.allNews = allNews;
 	}
 
-	/*// topicList字段为客户端返回新闻栏目下拉列表
-	private String topicList = null;
+	private List<newsInfo> favNews = new ArrayList<newsInfo>();
 
-	public String getTopicList() throws Exception {
-		TopicDao topicDao = new TopicDao();
-		topicList = topicDao.getTopicList(queryTopicId);
-		return topicList;
-	}
-
-	public void setTopicList(String topicList) {
-		this.topicList = topicList;
-	}*/
-	
-	private List<newsTopic> topicList;
-
-	public List<newsTopic> getTopicList() throws Exception {
-		TopicDao topicDao = new TopicDao();
-		topicList = topicDao.getTopics();
-		return topicList;
-	}
-
-	public void setTopicList(List<newsTopic> topicList) {
-		this.topicList = topicList;
+	public String showSubscribtion() {
+		UserDao userDao = new UserDao();
+		NewsInfoDao newsInfoDao = new NewsInfoDao();
+		String username = ActionContext.getContext().getSession().get("username").toString();
+		
+		if (username == null) {
+			return "login";
+		} else {
+			String favoriteString = userDao.getFavorites(username);
+			favNews = newsInfoDao.getNews(favoriteString);
+			return SUCCESS;
+		}
 	}
 
 	// Action默认执行方法
@@ -135,10 +128,6 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 	public String showIndexList() {
 		// 返回SUCCESS，表示客户端跳转到Action的success结果视图
 		// 根据Action动态配置规则，结果视图为showIndexList.jsp
-		return SUCCESS;
-	}
-	
-	public String showTopicList(){
 		return SUCCESS;
 	}
 

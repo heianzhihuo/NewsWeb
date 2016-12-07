@@ -1,10 +1,15 @@
 package userAction;
 
+import java.util.ArrayList;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+import Dao.TopicDao;
 import Dao.UserDao;
+import model.newsInfo;
+import model.newsTopic;
 import model.userinfo;
 
 public class UserAction extends ActionSupport implements ModelDriven<userinfo> {
@@ -67,7 +72,44 @@ public class UserAction extends ActionSupport implements ModelDriven<userinfo> {
 		}
 	}
 
-	public String addFavorites() {
-		return SUCCESS;
+	private ArrayList<String> favoriteList = new ArrayList<String>();
+	private ArrayList<newsTopic> topicList = new ArrayList<newsTopic>();
+
+	public String Subscribe() {
+		// 设置订阅
+		String username = ActionContext.getContext().getSession().get("username").toString();
+		UserDao userDao = new UserDao();
+		TopicDao topicDao = new TopicDao();
+		if (username == null) {// 未登录
+			this.addFieldError("username", "请先登录！");
+			return INPUT;
+		} else {
+			if (favoriteList.size() > 0) {// 提交订阅
+				String favoriteString = favoriteList.toString();
+				favoriteString = favoriteString.replace('[', '(');
+				favoriteString = favoriteString.replace(']', ')');
+				userDao.setFavorites(username, favoriteString);
+				return SUCCESS;
+			} else {// 显示话题
+				topicList = topicDao.getTopics();
+				return INPUT;
+			}
+		}
+	}
+
+	public ArrayList<newsTopic> getTopicList() {
+		return topicList;
+	}
+
+	public void setTopicList(ArrayList<newsTopic> topicList) {
+		this.topicList = topicList;
+	}
+
+	public ArrayList<String> getFavoriteList() {
+		return favoriteList;
+	}
+
+	public void setFavoriteList(ArrayList<String> favoriteList) {
+		this.favoriteList = favoriteList;
 	}
 }

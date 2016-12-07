@@ -5,6 +5,9 @@ public class newsTopic {
 	private int parentId;
 	private String topicName;
 
+	public newsTopic() {
+	}
+
 	public newsTopic(int topicId, int parentId, String topicName) {
 		this.topicId = topicId;
 		this.parentId = parentId;

@@ -19,20 +19,31 @@
 
 	<package name="NewsInfo" extends="struts-default">
 
+		<!-- 获取某一类新闻列表 -->
 		<action name="getNewsList" class="NewsAction.NewsInfoAction"
 			method="getNewsList">
 			<!-- <result>getNewsList.jsp</result> -->
 			<result>showNewsList.jsp</result>
 		</action>
 
+		<!-- 获取某一类新闻列表的前5条展示在首页 -->
 		<action name="showIndexList" class="NewsAction.NewsInfoAction"
 			method="showIndexList">
 			<result>showIndexList.jsp</result>
 		</action>
+
+		<action name="showSubscribtion" class="NewsAction.NewsInfoAction"
+			method="showSubscribtion">
+			<result>showSubscribtion.jsp</result>
+			<result name="login">login.jsp</result>
+		</action>
+
 	</package>
 
 	<package name="NewsTopic" extends="struts-default">
-		<action name="showTopicList" class="NewsAction.NewsInfoAction"
+
+		<!-- 获取新闻所有类别列表 -->
+		<action name="showTopicList" class="NewsAction.TopicAction"
 			method="showTopicList">
 			<result>showTopicList.jsp</result>
 		</action>
@@ -40,16 +51,29 @@
 	</package>
 
 	<package name="UserInfo" extends="struts-default">
+		<!-- 用户登录 -->
 		<action name="Login" class="userAction.UserAction" method="Login">
 			<result>Success.html</result>
 			<result name="input">login.jsp</result>
 		</action>
-		
+
+		<!-- 退出登录 -->
+		<action name="Logout" class="userAction.UserAction" method="Logout">
+			<result>index.jsp</result>
+		</action>
+
+		<!-- 用户注册 -->
 		<action name="Register" class="userAction.UserAction" method="Register">
 			<result>Success.html</result>
 			<result name="input">register.jsp</result>
 		</action>
-	</package>
 
+		<!-- 设置订阅内容 -->
+		<action name="Subscribe" class="userAction.UserAction" method="Subscribe">
+			<result>index.jsp</result>
+			<result name="input">subscribe.jsp</result>
+		</action>
+
+	</package>
 
 </struts>
