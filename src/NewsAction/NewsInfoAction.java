@@ -100,11 +100,11 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 		UserDao userDao = new UserDao();
 		NewsInfoDao newsInfoDao = new NewsInfoDao();
 		String username = null;
-		
-		if(ActionContext.getContext().getSession()!=null){
+
+		if (ActionContext.getContext().getSession() != null) {
 			username = (String) ActionContext.getContext().getSession().get("username");
 		}
-		
+
 		if (username == null) {
 			return "login";
 		} else {
@@ -140,6 +140,33 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 	public String showIndexList() {
 		// 返回SUCCESS，表示客户端跳转到Action的success结果视图
 		// 根据Action动态配置规则，结果视图为showIndexList.jsp
+		return SUCCESS;
+	}
+
+	public String keyWords;
+
+	public String getKeyWords() {
+		return keyWords;
+	}
+
+	public void setKeyWords(String keyWords) {
+		this.keyWords = keyWords;
+	}
+
+	public List<newsInfo> searchList = new ArrayList<newsInfo>();
+
+	public List<newsInfo> getSearchList() {
+		NewsInfoDao newsInfoDao = new NewsInfoDao();
+		searchList = newsInfoDao.searchNews(keyWords);
+		return searchList;
+	}
+
+	public void setSearchList(List<newsInfo> searchList) {
+		this.searchList = searchList;
+	}
+
+	// searchNews()为完成新闻网站首页中显示新闻链接列表操作的同名Action方法
+	public String searchNews() {
 		return SUCCESS;
 	}
 

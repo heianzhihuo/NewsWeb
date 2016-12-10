@@ -115,8 +115,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--/.navbar-collapse--> <!--/.navbar-->
 		</div>
 	</div>
-	<!-- header-section-ends-here -->
 
+	<!-- header-section-ends-here -->
 	<div class="wrap">
 		<div class="move-text">
 			<div class="breaking_news">
@@ -144,16 +144,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<div class="main-body">
 		<div class="wrap">
+			<ol class="breadcrumb">
+				<li><a href="index.html">首页</a></li>
+				<li class="active">搜索结果</li>
+			</ol>
 			<div class="col-md-8 content-left">
-				<s:form action="Subscribe" method="post" theme="simple">
-					<label>请选择：</label>
-					<s:checkboxlist list="topicList" name="favoriteList"
-						listKey="topicId" listValue="topicName" value="0">
-					</s:checkboxlist>
-					<s:submit value="确定" type="button" />
-				</s:form>
-			</div>
+				<div class="articles sports">
+					<div class="article">
+						<s:iterator var="item" value="searchList" status="st">
+							<s:if test="#item.picture == null ">
+								<p>
+									<s:date name="publishTime"></s:date>
+									<s:if test="source != null">
+			  来源：<s:property value="source"></s:property>
+									</s:if>
+								<p>
+									<a class="title" href="${item.url}"> ${item.title} </a>
+								<p>
+							</s:if>
+						</s:iterator>
+						<div class="clearfix"></div>
+					</div>
+				</div>
 
+			</div>
 
 			<div class="col-md-4 side-bar">
 				<div class="first_half">
@@ -203,10 +217,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</section>
 					</div>
 				</div>
+				<div class="second_half"></div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
+
 
 	<!-- content-section-ends-here -->
 	<!-- footer-section-starts-here -->

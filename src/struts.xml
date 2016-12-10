@@ -37,11 +37,16 @@
 			<result>showSubscribtion.jsp</result>
 			<result name="login">login.jsp</result>
 		</action>
-		
+
 		<action name="showSubscribtionList" class="NewsAction.NewsInfoAction"
 			method="showSubscribtion">
 			<result>showSubscribtionList.jsp</result>
 			<result name="login">unlogin.jsp</result>
+		</action>
+
+		<action name="searchNews" class="NewsAction.NewsInfoAction"
+			method="searchNews">
+			<result>searchResult.jsp</result>
 		</action>
 
 	</package>

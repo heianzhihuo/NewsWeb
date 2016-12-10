@@ -82,7 +82,7 @@ public class NewsInfoDao {
 			while (rs.next()) {
 				newsInfo temp = new newsInfo(rs.getInt("newsId"), rs.getString("title"), rs.getInt("topicId"),
 						rs.getString("url"), rs.getString("picture"), rs.getInt("weight"),
-						rs.getTimestamp("publichTime"), rs.getString("source"));
+						rs.getTimestamp("publishTime"), rs.getString("source"));
 				newsList.add(temp);
 			}
 			return newsList;
@@ -98,10 +98,6 @@ public class NewsInfoDao {
 				+ news.getTitle() + "'," + news.getTopicId() + ",'" + news.getUrl() + "'," + news.getPicture() + ",'"
 				+ news.getWeight() + "','" + news.getPublishTime() + "','" + news.getSource() + "');";
 		int result = mysqlDao.doUpdate(sqlString);
-	}
-
-	public void addNews(List<newsInfo> newsList) {
-		String sqlString = "";
 	}
 
 }

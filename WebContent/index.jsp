@@ -22,29 +22,7 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 <!-- for bootstrap working -->
@@ -111,16 +89,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="active"><a href="showSubscribtion">我的订阅</a></li>
 					</ul>
 					<sx:div href="showTopicList.action"></sx:div>
+
 					<div class="search">
 						<!-- start search-->
 						<div class="search-box">
 							<div id="sb-search" class="sb-search">
-								<form>
+								<s:form theme="simple" action="searchNews">
+									<s:textfield class="sb-search-input" type="search" id="search"
+										name="keyWords"></s:textfield>
+									<s:textfield class="sb-search-submit" type="submit"></s:textfield>
+									<span class="sb-icon-search"> </span>
+								</s:form>
+								<%-- <form>
 									<input class="sb-search-input" type="search" name="search"
 										id="search"> <input class="sb-search-submit"
-										type="submit" value=""> <span class="sb-icon-search">
-									</span>
-								</form>
+										type="submit" value="keyWords"> <span
+										class="sb-icon-search"> </span>
+								</form> --%>
 							</div>
 						</div>
 						<!-- search-scripts -->

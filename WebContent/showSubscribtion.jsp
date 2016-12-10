@@ -19,84 +19,8 @@
 	content="Express News Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 <!-- for bootstrap working -->
@@ -164,12 +88,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- start search-->
 						<div class="search-box">
 							<div id="sb-search" class="sb-search">
-								<form>
-									<input class="sb-search-input" placeholder="" type="search"
-										name="search" id="search"> <input
-										class="sb-search-submit" type="submit" value=""> <span
-										class="sb-icon-search"> </span>
-								</form>
+								<s:form theme="simple" action="searchNews">
+									<s:textfield class="sb-search-input" type="search" id="search"
+										name="keyWords"></s:textfield>
+									<s:textfield class="sb-search-submit" type="submit"></s:textfield>
+									<span class="sb-icon-search"> </span>
+								</s:form>
 							</div>
 						</div>
 						<!-- search-scripts -->
