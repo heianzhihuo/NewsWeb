@@ -73,6 +73,20 @@ public class NewsInfoDao {
 		}
 	}
 
+	private boolean isExisted(newsInfo news) {
+		//查找数据库中某条新闻是否存在
+		String sqlString = "select * from newsinfo where Title = '" + news.getTitle() + "';";
+		ResultSet rs = mysqlDao.doQuery(sqlString);
+		try {
+			if (rs.next())
+				return true;
+			else
+				return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	public ArrayList<newsInfo> searchNews(String keyWord) {
 		// 查找包含某个词的新闻
 		ArrayList<newsInfo> newsList = new ArrayList<newsInfo>();
@@ -97,7 +111,9 @@ public class NewsInfoDao {
 		String sqlString = "insert into newsInfo (title,topicId,url,picture,weight,publishTime,source) values ('"
 				+ news.getTitle() + "'," + news.getTopicId() + ",'" + news.getUrl() + "'," + news.getPicture() + ",'"
 				+ news.getWeight() + "','" + news.getPublishTime() + "','" + news.getSource() + "');";
-		int result = mysqlDao.doUpdate(sqlString);
+		int result = 0;
+		if (!isExisted(news)) {
+			result = mysqlDao.doUpdate(sqlString);
+		}
 	}
-
 }
