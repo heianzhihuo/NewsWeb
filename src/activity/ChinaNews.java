@@ -1,24 +1,17 @@
 package activity;
 
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import javax.swing.border.TitledBorder;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
-
 import Dao.NewsInfoDao;
 import Dao.TopicDao;
 import model.newsInfo;
 import model.newsTopic;
-import sun.java2d.pipe.SpanShapeRenderer.Simple;
 
 public class ChinaNews {
 	private TopicDao topicDao = new TopicDao();
@@ -70,12 +63,13 @@ public class ChinaNews {
 	}
 
 	public void getNewsInfo(String url) {
-		String title, publishDate, publishTime, topic, source;
+		String title, publishTime, topic;
+		String source = null;
 		int topicId;
 		Document doc = null;
 		// temp.setUrl(url);
 		try {
-			
+
 			doc = Jsoup.connect(url).get();
 			// 下面获取标题
 			Elements h1s = doc.select("h1");
@@ -99,7 +93,6 @@ public class ChinaNews {
 			if (topicId < 1) {
 				return;
 			}
-			String[] topics = topic.split("→");
 
 			// 下面获取发布时间
 			Elements spans = doc.select("span[id=pubtime_baidu]");
@@ -108,7 +101,10 @@ public class ChinaNews {
 
 			// 下面获取来源
 			spans = doc.select("span[id=source_baidu]");
-			source = spans.first().text().replace("来源：", "");
+			if (!spans.isEmpty()) {
+				source = spans.first().text().replace("来源：", "");
+			}
+
 			/*
 			 * System.out.println(title+","+topicId+","+topic);
 			 * System.out.println(publishDate+publishTime+source);
@@ -120,7 +116,7 @@ public class ChinaNews {
 			tempNews.setUrl(url);
 			tempNews.setPublishTime(timestamp);
 			tempNews.setSource(source);
-			
+
 			NewsInfoDao newsDao = new NewsInfoDao();
 			newsDao.addNews(tempNews);
 		} catch (Exception e) {

@@ -99,7 +99,11 @@ public class NewsInfoAction extends ActionSupport implements ModelDriven<newsInf
 	public String showSubscribtion() {
 		UserDao userDao = new UserDao();
 		NewsInfoDao newsInfoDao = new NewsInfoDao();
-		String username = ActionContext.getContext().getSession().get("username").toString();
+		String username = null;
+		
+		if(ActionContext.getContext().getSession()!=null){
+			username = (String) ActionContext.getContext().getSession().get("username");
+		}
 		
 		if (username == null) {
 			return "login";

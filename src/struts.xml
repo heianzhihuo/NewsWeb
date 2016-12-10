@@ -37,6 +37,12 @@
 			<result>showSubscribtion.jsp</result>
 			<result name="login">login.jsp</result>
 		</action>
+		
+		<action name="showSubscribtionList" class="NewsAction.NewsInfoAction"
+			method="showSubscribtion">
+			<result>showSubscribtionList.jsp</result>
+			<result name="login">unlogin.jsp</result>
+		</action>
 
 	</package>
 
@@ -53,7 +59,7 @@
 	<package name="UserInfo" extends="struts-default">
 		<!-- 用户登录 -->
 		<action name="Login" class="userAction.UserAction" method="Login">
-			<result>Success.html</result>
+			<result>index.jsp</result>
 			<result name="input">login.jsp</result>
 		</action>
 
