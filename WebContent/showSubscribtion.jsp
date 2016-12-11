@@ -6,7 +6,7 @@
 <html>
 <head>
 <sx:head />
-<title><s:property value="queryTopicName"></s:property></title>
+<title>我的订阅</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -158,7 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  来源：<s:property value="source"></s:property>
 									</s:if>
 								<p>
-									<a class="title" href="${item.url}"> ${item.title} </a>
+									<a class="title" target="_blank" href="${item.url}"> ${item.title} </a>
 								<p>
 							</s:if>
 						</s:iterator>

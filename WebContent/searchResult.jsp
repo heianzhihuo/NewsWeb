@@ -159,7 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  来源：<s:property value="source"></s:property>
 									</s:if>
 								<p>
-									<a class="title" href="${item.url}"> ${item.title} </a>
+									<a class="title" target="_blank" href="${item.url}"> ${item.title} </a>
 								<p>
 							</s:if>
 						</s:iterator>

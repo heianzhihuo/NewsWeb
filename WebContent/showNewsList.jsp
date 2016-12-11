@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</s:if>
 									<p>
 									<p>
-										<a class="title" href="${item.url}"> ${item.title} </a>
+										<a class="title" target="_blank" href="${item.url}"> ${item.title} </a>
 									<p>
 								</s:if>
 						</s:iterator>

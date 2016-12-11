@@ -75,7 +75,7 @@
 
 		<!-- 用户注册 -->
 		<action name="Register" class="userAction.UserAction" method="Register">
-			<result>Success.html</result>
+			<result>index.jsp</result>
 			<result name="input">register.jsp</result>
 		</action>
 
