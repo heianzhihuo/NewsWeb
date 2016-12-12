@@ -9,7 +9,7 @@ public class TestListener implements ServletContextListener {
 
 	public void contextInitialized(ServletContextEvent event) {
 		timer = new Timer(true);
-		timer.schedule(new TestTimer(), 0, 1800000);
+		timer.schedule(new TestTimer(),1000,1800000*2);
 		// 服务器启动时自动执行，每隔1800000ms执行一次，即每30min执行一次
 	}
 

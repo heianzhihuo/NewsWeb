@@ -17,9 +17,13 @@ public class ChinaNews {
 	private TopicDao topicDao = new TopicDao();
 	private ArrayList<newsTopic> topicList = topicDao.getTopics();
 
-	public void getAll() {
+	public void getHome() {
 		String baseUrl = "http://www.chinanews.com/";
 		getOnePage(baseUrl);// 获取首页新闻
+		System.out.println("End Home");
+	}
+
+	public void getRollNews() {
 		String base = "http://www.chinanews.com/scroll-news/news";
 		for (int i = 1; i <= 10; i++) {
 			String url = base + i + ".html";

@@ -2,14 +2,18 @@ package activity;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
+import Dao.NewsInfoDao;
 import Dao.TopicDao;
+import model.newsInfo;
 import model.newsTopic;
 
 public class SinaNews {
@@ -19,15 +23,15 @@ public class SinaNews {
 	PrintStream p;
 
 	public SinaNews() {
-		try {
-			out = new FileOutputStream("Data.txt");
+		/*try {
+			out = new FileOutputStream("Data1.txt");
 			p = new PrintStream(out);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 		System.getProperties().put("proxySet", "true");
 		System.getProperties().put("proxyHost", "127.0.0.1");
-		System.getProperties().put("proxyPort", "8080");
+		System.getProperties().put("proxyPort", "8070");
 
 	}
 
@@ -41,10 +45,8 @@ public class SinaNews {
 
 	private int getTopicId(String topic) {
 		int topicId = -1;
-		if (topic.contains("金融")) {
+		if (topic.contains("金融") || topic.contains("证券") || topic.contains("财经")) {
 			return topicDao.getTopicId("财经");
-		} else if (topic.contains("IT")) {
-			return topicDao.getTopicId("科技");
 		}
 		for (int i = 0; i < topicList.size(); i++) {
 			if (topic.contains(topicList.get(i).getTopicName())) {
@@ -54,15 +56,27 @@ public class SinaNews {
 		return topicId;
 	}
 
+	private String getTime(Document doc) {
+		String timeString = null;
+		for (int i = 0; i < doc.childNodeSize(); i++) {
+			Node child = doc.childNode(i);
+			if (child.nodeName().equals("#comment")) {
+				timeString = child.toString();
+				if (timeString.contains("published at")) {
+					timeString = timeString.substring(21, 40);
+					return timeString;
+				}
+			}
+		}
+		return timeString;
+	}
+
 	public void getNewsInfo(String url) {
 		String title, publishTime = null, topic = null, source = null;
-		int topicId = 0;
+		int topicId = -1;
 		Document doc = null;
 		try {
-			// System.out.println("Start");
 			doc = Jsoup.connect(url).get();
-			// p.println(doc);
-			print(url);
 			// 下面获取标题
 			Elements h1s = doc.select("h1");
 			if (h1s == null) {
@@ -74,39 +88,51 @@ public class SinaNews {
 			}
 			title = h1.text();
 
-			// 下面获取话题
-			Elements linksElements = doc.select("link[rel=alternate]");
-			if (!linksElements.isEmpty()) {
-				Element link = linksElements.first();
-				// System.out.println(link);
-				topic = link.attr("title");
+			Elements divs = doc.select("div[class=bread]");
+			if (divs.isEmpty()) {
+				divs = doc.select("div[class=path]");
+			}
+			if (!divs.isEmpty()) {
+				topic = divs.text();
+			}
+			if (topic != null) {
+				topicId = getTopicId(topic);
+			} else {
+				return;
 			}
 
 			// 下面获取时间
-			Elements metas = doc.select("meta[name=weibo: article:create_at]");
-			if (!metas.isEmpty()) {
-				Element meta = metas.first();
-				publishTime = meta.attr("content");
-			}
+			/*
+			 * Elements metas =
+			 * doc.select("meta[name=weibo: article:create_at]"); if
+			 * (!metas.isEmpty()) { Element meta = metas.first(); publishTime =
+			 * meta.attr("content"); }
+			 */
+			publishTime = getTime(doc);
 
 			// 下面获取来源
 			Elements mets = doc.select("meta[name=mediaid]");
-			if (!metas.isEmpty()) {
+			if (!mets.isEmpty()) {
 				Element mes = mets.first();
 				source = mes.attr("content");
 			}
 
-			print(title);
-			print(topic);
-			print(publishTime);
-			print(source);
-			print("++++++++++++++++++++");
+			if (title != null && topicId != -1) {
+				newsInfo tempNews = new newsInfo();
+				tempNews.setTitle(title);
+				tempNews.setTopicId(topicId);
+				tempNews.setUrl(url);
+				Timestamp timestamp = Timestamp.valueOf(publishTime);
+				tempNews.setPublishTime(timestamp);
+				tempNews.setSource(source);
 
-			/*
-			 * System.out.println(title); System.out.println(publishTime);
-			 * System.out.println(topic); System.out.println(source);
-			 */
-
+				NewsInfoDao newsDao = new NewsInfoDao();
+				newsDao.addNews(tempNews);
+				/*
+				 * print(title); print(url); print(topic); print(publishTime);
+				 * print(source); print("++++++++++++++++++++");
+				 */
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(url);
@@ -123,19 +149,29 @@ public class SinaNews {
 					// 判断链接是否为新闻链接
 					getNewsInfo(link.attr("abs:href"));
 					double t = Math.random();
-					Thread.sleep((int) t * 100);
+					Thread.sleep((int) t * 10);
 				}
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println(url);
 			e.printStackTrace();
 		}
-		System.out.println("End");
 	}
 
 	public void getRollNews() {
+		String base = "http://roll.news.sina.com.cn/s/channel.php?ch=01#col=89&spec=&type=&ch=01&"
+				+ "k=&offset_page=0&offset_num=0&num=60&asc=&page=";
+		for (int i = 1; i <= 10; i++) {
+			String url = base + i;
+			System.out.println(url);
+			getOnePage(url);
+		}
+		System.out.println("End!");
+	}
 
+	public void getHome() {
+		getOnePage("http://news.sina.com.cn/");
+		System.out.println("End Home");
 	}
 
 }
