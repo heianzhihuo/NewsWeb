@@ -2,7 +2,6 @@ package Dao;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 import model.newsInfo;
 
@@ -108,7 +107,7 @@ public class NewsInfoDao {
 
 	public void addNews(newsInfo news) {
 		// 向数据库中添加新闻
-		String sqlString = "insert into newsInfo (title,topicId,url,picture,weight,publishTime,source) values ('"
+		String sqlString = "insert into newsinfo (title,topicId,url,picture,weight,publishTime,source) values ('"
 				+ news.getTitle() + "'," + news.getTopicId() + ",'" + news.getUrl() + "'," + news.getPicture() + ",'"
 				+ news.getWeight() + "','" + news.getPublishTime() + "','" + news.getSource() + "');";
 		int result = 0;

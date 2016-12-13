@@ -17,9 +17,16 @@ public class Dao {
 	public Dao() {
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver").newInstance(); ;
+			String urlString  = "jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_newsweb";
+			String usernameString = "n2zlx4olyy";
+			String passwordString = "ixlk42h45wyiim10z0wi5334m5h33303j422kj5i";
+//			String user=SaeUserInfo.getAccessKey();    //获取AccessKey,不需要自己填写
+//            String password=SaeUserInfo.getSecretKey(); //获取SecretKey
 			// 加载MYSQL JDBC驱动程序
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsdb", "root", "123456");
+			//w.rdc.sae.sina.com.cn:3307
+			//conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsdb", "root", "123456");
+			conn = DriverManager.getConnection(urlString,usernameString,passwordString);
 			// 连接URL为 jdbc:mysql//服务器地址/数据库名 ，后面的2个参数分别是登陆用户名和密码
 			stmt = conn.createStatement();
 		} catch (Exception e) {
