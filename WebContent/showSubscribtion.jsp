@@ -260,7 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 				<ul class="location">
 					<li><span class="glyphicon glyphicon-envelope"></span></li>
-					<li>743084875@qq.com</a></li>
+					<li>704385759@qq.com</a></li>
 					<div class="clearfix"></div>
 				</ul>
 			</address>
